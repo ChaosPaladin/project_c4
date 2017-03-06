@@ -219,9 +219,8 @@ public class AdminAdmin implements IAdminCommandHandler {
                     L2Multisell.getInstance().reload();
                     activeChar.sendMessage("multisell reloaded");
                 }
-                else if(type.startsWith("teleport"))
-                {
-                    TeleportLocationTable.getInstance().reloadAll();
+                else if(type.startsWith("teleport")) {
+                	TeleportLocationTable.getInstance().reload();
                     activeChar.sendMessage("teleport location table reloaded");
                 }
                 else if(type.startsWith("skill"))

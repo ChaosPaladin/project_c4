@@ -27,6 +27,11 @@ public class TeleportLocationTable {
 	    load();
 	}
 	
+	//FIX not synchronized realod
+	public void reload() {
+		load();
+	}
+	
 	private void load() {
 		teleports = new TreeMap<>();
 		XmlLoader.load("teleport.xml").list.stream().

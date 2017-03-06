@@ -130,9 +130,8 @@ public class AdminSpawn implements IAdminCommandHandler
             SpawnTable.getInstance().reloadAll();
             RaidBossSpawnManager.getInstance().reloadBosses();
             GmListTable.broadcastMessageToGMs("NPC Respawn completed!");
-        } else if (command.startsWith("admin_teleport_reload"))
-        {
-            TeleportLocationTable.getInstance().reloadAll();
+        } else if (command.startsWith("admin_teleport_reload")) {
+            TeleportLocationTable.getInstance().reload();
             GmListTable.broadcastMessageToGMs("Teleport List Table reloaded.");
 	}
         return true;
