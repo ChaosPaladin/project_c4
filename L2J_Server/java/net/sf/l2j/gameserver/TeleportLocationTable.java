@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 import la2.world.model.data.xml.XmlEntry;
 import la2.world.model.data.xml.XmlLoader;
-import la2.world.model.data.xml.XmlTeleport;
 import net.sf.l2j.gameserver.model.L2TeleportLocation;
 
 //FIX create teleport list for npc, player can inject packet and replate id when teleporting, and teleport to not allowed point.
@@ -35,21 +34,11 @@ public class TeleportLocationTable {
 	private void load() {
 		teleports = new TreeMap<>();
 		XmlLoader.load("teleport.xml").list.stream().
-			filter(this::filter).
-			map(this::map).
-			map(L2TeleportLocation::of).
+			filter(XmlEntry::isTeleport).
+			map(XmlEntry::asTeleport).
+			map(L2TeleportLocation::new).
 			forEach(this::add);
 		_log.config("TeleportLocationTable: Loaded " + teleports.size() + " Teleport Location Templates.");
-	}
-	
-	//DEVNOTE for stream
-	private final boolean filter(XmlEntry entry) {
-		return entry.isTeleport();
-	}
-	
-	//DEVNOTE for stream
-	private final XmlTeleport map(XmlEntry entry) {
-		return entry.asTeleport();
 	}
 	
 	//DEVNOTE for stream
@@ -65,4 +54,5 @@ public class TeleportLocationTable {
 	public L2TeleportLocation getTemplate(int id) {
 		return teleports.get(id);
 	}
+	
 }
