@@ -176,22 +176,22 @@ public final class L2TeleporterInstance extends L2FolkInstance
         if (list != null)
         {
             //you cannot teleport to village that is in siege
-            if (SiegeManager.getInstance().checkIfInZone(list.getLocX(), list.getLocY()))
+            if (SiegeManager.getInstance().checkIfInZone(list.x, list.y))
             {
                 player.sendPacket(new SystemMessage(707));
                 return;
             }
-            else if (TownManager.getInstance().townHasCastleInSeige(list.getLocX(), list.getLocY()))
+            else if (TownManager.getInstance().townHasCastleInSeige(list.x, list.y))
             {
                 player.sendPacket(new SystemMessage(707));
                 return;
             }
-            else if (player.reduceAdena("Teleport", list.getPrice(), this, true))
+            else if (player.reduceAdena("Teleport", list.price, this, true))
             {
                 if (Config.DEBUG)
                     _log.fine("Teleporting player " + player.getName() + " to new location: "
-                        + list.getLocX() + ":" + list.getLocY() + ":" + list.getLocZ());
-                player.teleToLocation(list.getLocX(), list.getLocY(), list.getLocZ());
+                        + list.x + ":" + list.y + ":" + list.z);
+                player.teleToLocation(list.x, list.y, list.z);
             }
         }
         else

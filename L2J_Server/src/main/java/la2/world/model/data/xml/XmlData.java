@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "data")
 public class XmlData {
 	@XmlElements({
+		@XmlElement(name = "teleport", type = XmlTeleport.class),
 		@XmlElement(name ="zone", type = XmlZone.class)
 	})
 	public List<XmlEntry> list;

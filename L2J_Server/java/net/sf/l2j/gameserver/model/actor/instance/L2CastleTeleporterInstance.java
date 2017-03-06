@@ -131,14 +131,14 @@ public final class L2CastleTeleporterInstance extends L2FolkInstance
 		L2TeleportLocation list = TeleportLocationTable.getInstance().getTemplate(val);
 		if (list != null)
 		{
-			if(player.reduceAdena("Teleport", list.getPrice(), player.getLastFolkNPC(), true))
+			if(player.reduceAdena("Teleport", list.price, player.getLastFolkNPC(), true))
 			{
 				if (Config.DEBUG)
-					_log.fine("Teleporting player "+player.getName()+" to new location: "+list.getLocX()+":"+list.getLocY()+":"+list.getLocZ());
+					_log.fine("Teleporting player "+player.getName()+" to new location: "+list.x+":"+list.y+":"+list.z);
                 
 				// teleport
-				player.teleToLocation(list.getLocX(), list.getLocY(), list.getLocZ());
-				player.stopMove(new L2CharPosition(list.getLocX(), list.getLocY(), list.getLocZ(), player.getHeading()));
+				player.teleToLocation(list.x, list.y, list.z);
+				player.stopMove(new L2CharPosition(list.x, list.y, list.z, player.getHeading()));
 			}
 		}
 		else
