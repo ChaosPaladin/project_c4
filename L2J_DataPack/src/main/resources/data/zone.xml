@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data>
+    <zone id="1" type="Arena" name="Giran Arena" x1="72498" y1="142271" x2="73495" y2="143255" z="-3774" taxById="0"/>
+    <zone id="2" type="Arena" name="Gludin Arena" x1="-88410" y1="142728" x2="-87421" y2="141730" z="-3633" taxById="0"/>
+    <zone id="3" type="Arena" name="Collusieum" x1="148014" y1="45304" x2="150976" y2="48020" z="-3410" taxById="0"/>
+    <zone id="4" type="Arena" name="Monster Track" x1="11955" y1="183017" x2="12937" y2="184008" z="-3565" taxById="0"/>
+    <zone id="1" type="Arena Spawn" name="Giran Arena" x1="73890" y1="142656" x2="0" y2="0" z="-3778" taxById="0"/>
+    <zone id="2" type="Arena Spawn" name="Gludin Arena" x1="-86979" y1="142402" x2="0" y2="0" z="-3643" taxById="0"/>
+    <zone id="3" type="Arena Spawn" name="Collusieum" x1="147451" y1="46728" x2="0" y2="0" z="-3410" taxById="0"/>
+    <zone id="4" type="Arena Spawn" name="Monster Track" x1="12312" y1="182752" x2="0" y2="0" z="-3558" taxById="0"/>
+    <zone id="1" type="Castle Area" name="Gludio" x1="-22900" y1="104000" x2="-14567" y2="116513" z="0" taxById="5"/>
+    <zone id="2" type="Castle Area" name="Dion" x1="18438" y1="152343" x2="25757" y2="164097" z="0" taxById="5"/>
+    <zone id="3" type="Castle Area" name="Giran" x1="105737" y1="140128" x2="121331" y2="149842" z="0" taxById="5"/>
+    <zone id="4" type="Castle Area" name="Oren" x1="72876" y1="32336" x2="87556" y2="40457" z="0" taxById="5"/>
+    <zone id="5" type="Castle Area" name="Aden" x1="134790" y1="-2552" x2="154760" y2="20850" z="0" taxById="0"/>
+    <zone id="6" type="Castle Area" name="Innadril" x1="111975" y1="241396" x2="120720" y2="253425" z="0" taxById="5"/>
+    <zone id="7" type="Castle Area" name="Goddard" x1="0" y1="0" x2="0" y2="0" z="0" taxById="5"/>
+    <zone id="1" type="Castle HQ" name="Gludio" x1="-20400" y1="106800" x2="-15700" y2="113750" z="0" taxById="5"/>
+    <zone id="2" type="Castle HQ" name="Dion" x1="19650" y1="163000" x2="24350" y2="155950" z="0" taxById="5"/>
+    <zone id="3" type="Castle HQ" name="Giran" x1="119200" y1="142750" x2="112200" y2="147450" z="0" taxById="5"/>
+    <zone id="4" type="Castle HQ" name="Oren" x1="85300" y1="34900" x2="78100" y2="39600" z="0" taxById="5"/>
+    <zone id="5" type="Castle HQ" name="Aden" x1="144600" y1="550" x2="150300" y2="8550" z="0" taxById="0"/>
+    <zone id="6" type="Castle HQ" name="Innadril" x1="111975" y1="241396" x2="120720" y2="253425" z="0" taxById="5"/>
+    <zone id="7" type="Castle HQ" name="Goddard" x1="0" y1="0" x2="0" y2="0" z="0" taxById="5"/>
+    <zone id="1" type="Castle Defender Spawn" name="Gludio" x1="-18105" y1="110303" x2="0" y2="0" z="-2146" taxById="0"/>
+    <zone id="2" type="Castle Defender Spawn" name="Dion" x1="22080" y1="159450" x2="0" y2="0" z="-2441" taxById="0"/>
+    <zone id="3" type="Castle Defender Spawn" name="Giran" x1="115621" y1="145097" x2="0" y2="0" z="-2214" taxById="0"/>
+    <zone id="4" type="Castle Defender Spawn" name="Oren" x1="81707" y1="37208" x2="0" y2="0" z="-1941" taxById="0"/>
+    <zone id="5" type="Castle Defender Spawn" name="Aden" x1="147456" y1="6048" x2="0" y2="0" z="253" taxById="0"/>
+    <zone id="6" type="Castle Defender Spawn" name="Innadril" x1="116025" y1="248229" x2="0" y2="0" z="-536" taxById="0"/>
+    <zone id="1" type="Clan Hall" name="Gludio 1" x1="-16400" y1="123275" x2="-15551" y2="123850" z="-3117" taxById="1"/>
+    <zone id="2" type="Clan Hall" name="Gludio 2" x1="-15100" y1="125350" x2="-14800" y2="125800" z="-3143" taxById="1"/>
+    <zone id="3" type="Clan Hall" name="Gludio 3" x1="-14050" y1="125050" x2="-13700" y2="125700" z="-3143" taxById="1"/>
+    <zone id="4" type="Clan Hall" name="Gludio 4" x1="-12950" y1="123900" x2="-12300" y2="124250" z="-3117" taxById="1"/>
+    <zone id="5" type="Clan Hall" name="Gludin 1" x1="-84700" y1="151550" x2="-84250" y2="152350" z="-3130" taxById="1"/>
+    <zone id="5" type="Clan Hall" name="Gludin 1" x1="-84350" y1="151950" x2="-83800" y2="152350" z="-3130" taxById="1"/>
+    <zone id="6" type="Clan Hall" name="Gludin 2" x1="-84400" y1="153050" x2="-83950" y2="154050" z="-3166" taxById="1"/>
+    <zone id="6" type="Clan Hall" name="Gludin 2" x1="-84200" y1="153050" x2="-83550" y2="153600" z="-3166" taxById="1"/>
+    <zone id="7" type="Clan Hall" name="Gludin 3" x1="-84500" y1="154900" x2="-83950" y2="155700" z="-3158" taxById="1"/>
+    <zone id="7" type="Clan Hall" name="Gludin 3" x1="-84100" y1="155300" x2="-83500" y2="155700" z="-3158" taxById="1"/>
+    <zone id="8" type="Clan Hall" name="Gludin 4" x1="-79700" y1="149400" x2="-79250" y2="150300" z="-3061" taxById="1"/>
+    <zone id="8" type="Clan Hall" name="Gludin 4" x1="-80100" y1="149400" x2="-79500" y2="149850" z="-3061" taxById="1"/>
+    <zone id="9" type="Clan Hall" name="Gludin 5" x1="-79700" y1="151350" x2="-79300" y2="152250" z="-3036" taxById="1"/>
+    <zone id="9" type="Clan Hall" name="Gludin 5" x1="-80100" y1="151800" x2="-79500" y2="152250" z="-3036" taxById="1"/>
+    <zone id="10" type="Clan Hall" name="Dion 1" x1="17400" y1="144800" x2="18000" y2="145350" z="-3043" taxById="1"/>
+    <zone id="11" type="Clan Hall" name="Dion 2" x1="18850" y1="143600" x2="18600" y2="143100" z="-3017" taxById="1"/>
+    <zone id="12" type="Clan Hall" name="Dion 3" x1="19950" y1="146000" x2="20400" y2="146300" z="-3118" taxById="1"/>
+    <zone id="13" type="Clan Hall" name="Giran 1" x1="80780" y1="151063" x2="81156" y2="152111" z="-3518" taxById="1"/>
+    <zone id="14" type="Clan Hall" name="Giran 2" x1="82288" y1="152437" x2="81912" y2="151393" z="-3543" taxById="1"/>
+    <zone id="15" type="Clan Hall" name="Giran 3" x1="78077" y1="148285" x2="79119" y2="147911" z="-3608" taxById="1"/>
+    <zone id="16" type="Clan Hall" name="Giran 4" x1="83205" y1="144788" x2="83577" y2="145837" z="-3396" taxById="1"/>
+    <zone id="17" type="Clan Hall" name="Giran 5" x1="82244" y1="145860" x2="81870" y2="144814" z="-3517" taxById="1"/>
+    <zone id="18" type="Clan Hall" name="Aden 1" x1="143712" y1="27490" x2="144222" y2="26713" z="-2255" taxById="1"/>
+    <zone id="19" type="Clan Hall" name="Aden 2" x1="143720" y1="28607" x2="144262" y2="27789" z="-2247" taxById="1"/>
+    <zone id="20" type="Clan Hall" name="Aden 3" x1="151025" y1="26140" x2="150512" y2="26916" z="-2249" taxById="1"/>
+    <zone id="21" type="Clan Hall" name="Aden 4" x1="150396" y1="24062" x2="150940" y2="23243" z="-2120" taxById="1"/>
+    <zone id="22" type="Clan Hall" name="Aden 5" x1="149362" y1="22756" x2="148855" y2="23536" z="-2132" taxById="1"/>
+    <zone id="23" type="Clan Hall" name="Aden 6" x1="145999" y1="24932" x2="145455" y2="25753" z="-2121" taxById="1"/>
+    <zone id="24" type="Clan Hall" name="Goddard 1" x1="149717" y1="-55824" x2="149063" y2="-55350" z="-2783" taxById="1"/>
+    <zone id="25" type="Clan Hall" name="Goddard 2" x1="148479" y1="-56473" x2="148479" y2="-57275" z="-2773" taxById="1"/>
+    <zone id="26" type="Clan Hall" name="Goddard 3" x1="147238" y1="-56636" x2="146564" y2="-57078" z="-2783" taxById="1"/>
+    <zone id="27" type="Clan Hall" name="Goddard 4" x1="146399" y1="-55682" x2="145652" y2="-55386" z="-2773" taxById="1"/>
+    <zone id="28" type="Clan Hall" name="Bandits Stronghold" x1="80738" y1="-15914" x2="79627" y2="-15054" z="-1810" taxById="1"/>
+    <zone id="29" type="Clan Hall" name="Partisan Hideaway" x1="43151" y1="108377" x2="43648" y2="109399" z="-1981" taxById="1"/>
+    <zone id="30" type="Clan Hall" name="Hot Springs Guild House" x1="141414" y1="-124508" x2="140590" y2="-124706" z="-1896" taxById="1"/>
+    <zone id="1" type="Peace" name="Giran Arena" x1="72249" y1="142018" x2="72498" y2="143510" z="-3774" taxById="0"/>
+    <zone id="1" type="Peace" name="Giran Arena" x1="73495" y1="142018" x2="73738" y2="143510" z="-3774" taxById="0"/>
+    <zone id="1" type="Peace" name="Giran Arena" x1="72498" y1="142018" x2="73495" y2="142271" z="-3774" taxById="0"/>
+    <zone id="1" type="Peace" name="Giran Arena" x1="72498" y1="143255" x2="73495" y2="143510" z="-3774" taxById="0"/>
+    <zone id="2" type="Peace" name="Gudin Arena" x1="-88654" y1="141479" x2="-88410" y2="142960" z="-3648" taxById="0"/>
+    <zone id="2" type="Peace" name="Gudin Arena" x1="-87421" y1="141479" x2="-87172" y2="142960" z="-3648" taxById="0"/>
+    <zone id="2" type="Peace" name="Gudin Arena" x1="-88410" y1="141479" x2="-87421" y2="141728" z="-3648" taxById="0"/>
+    <zone id="2" type="Peace" name="Gudin Arena" x1="-88410" y1="142715" x2="-87421" y2="142960" z="-3648" taxById="0"/>
+    <zone id="3" type="Peace" name="Collusieum" x1="147117" y1="46230" x2="148014" y2="47217" z="-3410" taxById="0"/>
+    <zone id="3" type="Peace" name="Collusieum" x1="147771" y1="45304" x2="148014" y2="46230" z="-3410" taxById="0"/>
+    <zone id="3" type="Peace" name="Collusieum" x1="147771" y1="47217" x2="148014" y2="48020" z="-3410" taxById="0"/>
+    <zone id="3" type="Peace" name="Collusieum" x1="150976" y1="46228" x2="151885" y2="47217" z="-3410" taxById="0"/>
+    <zone id="3" type="Peace" name="Collusieum" x1="150976" y1="45304" x2="151218" y2="46228" z="-3410" taxById="0"/>
+    <zone id="3" type="Peace" name="Collusieum" x1="150976" y1="47217" x2="151218" y2="48020" z="-3410" taxById="0"/>
+    <zone id="4" type="Peace" name="Monster Track" x1="11703" y1="181289" x2="14574" y2="183017" z="-3564" taxById="0"/>
+    <zone id="4" type="Peace" name="Monster Track" x1="11703" y1="183017" x2="11955" y2="184260" z="-3564" taxById="0"/>
+    <zone id="4" type="Peace" name="Monster Track" x1="11955" y1="184008" x2="12937" y2="184260" z="-3564" taxById="0"/>
+    <zone id="4" type="Peace" name="Monster Track" x1="12937" y1="183017" x2="13192" y2="184260" z="-3564" taxById="0"/>
+    <zone id="1" type="Siege Battlefield" name="Gludio" x1="-22900" y1="104000" x2="-14567" y2="116513" z="0" taxById="0"/>
+    <zone id="2" type="Siege Battlefield" name="Dion" x1="18438" y1="152343" x2="25757" y2="164097" z="0" taxById="0"/>
+    <zone id="3" type="Siege Battlefield" name="Giran" x1="105737" y1="140128" x2="121331" y2="149842" z="0" taxById="0"/>
+    <zone id="4" type="Siege Battlefield" name="Oren" x1="72876" y1="32336" x2="87556" y2="40457" z="0" taxById="0"/>
+    <zone id="5" type="Siege Battlefield" name="Aden" x1="134790" y1="-2552" x2="154760" y2="20850" z="0" taxById="0"/>
+    <zone id="6" type="Siege Battlefield" name="Innadril" x1="111975" y1="241396" x2="120720" y2="253425" z="0" taxById="0"/>
+    <zone id="1" type="Town" name="DE Village" x1="6063" y1="19664" x2="17248" y2="14019" z="0" taxById="4"/>
+    <zone id="2" type="Town" name="Talking Island" x1="-87312" y1="240096" x2="-81129" y2="246345" z="0" taxById="1"/>
+    <zone id="3" type="Town" name="Elven Village" x1="48294" y1="52995" x2="42402" y2="46155" z="0" taxById="4"/>
+    <zone id="4" type="Town" name="Orc Village" x1="-42078" y1="-109785" x2="-47648" y2="-117366" z="0" taxById="0"/>
+    <zone id="5" type="Town" name="Gludin Village" x1="-84892" y1="149075" x2="-76820" y2="156125" z="0" taxById="1"/>
+    <zone id="6" type="Town" name="Dwarven Village" x1="117395" y1="-176766" x2="114650" y2="-184347" z="0" taxById="0"/>
+    <zone id="7" type="Town" name="Gludio Castle Town" x1="-11853" y1="126610" x2="-16652" y2="121003" z="0" taxById="1"/>
+    <zone id="8" type="Town" name="Dion Castle Town" x1="15300" y1="141609" x2="21570" y2="147635" z="0" taxById="2"/>
+    <zone id="9" type="Town" name="Giran Castle Town" x1="76995" y1="141424" x2="90565" y2="153614" z="0" taxById="3"/>
+    <zone id="10" type="Town" name="Town of Oren" x1="76696" y1="57199" x2="84511" y2="50120" z="0" taxById="4"/>
+    <zone id="11" type="Town" name="Hunter Village" x1="121308" y1="73941" x2="114667" y2="80383" z="0" taxById="5"/>
+    <zone id="12" type="Town" name="Town of Aden" x1="142312" y1="32317" x2="152163" y2="19708" z="0" taxById="5"/>
+    <zone id="13" type="Town" name="Goddard" x1="152846" y1="-54289" x2="143721" y2="-59446" z="0" taxById="5"/>
+    <zone id="14" type="Town" name="Rune Castle Town" x1="47150" y1="-44815" x2="32531" y2="-52045" z="0" taxById="6"/>
+    <zone id="15" type="Town" name="Heine" x1="103598" y1="216010" x2="118991" y2="225905" z="0" taxById="6"/>
+    <zone id="16" type="Town" name="Floran Village" x1="0" y1="0" x2="0" y2="0" z="0" taxById="2"/>
+    <zone id="17" type="Town" name="Ivory Tower" x1="0" y1="0" x2="0" y2="0" z="0" taxById="4"/>
+    <zone id="1" type="Town Spawn" name="DE Village" x1="12181" y1="16675" x2="0" y2="0" z="-4580" taxById="0"/>
+    <zone id="2" type="Town Spawn" name="Talking Island" x1="-84176" y1="243382" x2="0" y2="0" z="-3126" taxById="0"/>
+    <zone id="3" type="Town Spawn" name="Elven Village" x1="45525" y1="48376" x2="0" y2="0" z="-3059" taxById="0"/>
+    <zone id="4" type="Town Spawn" name="Orc Village" x1="-45232" y1="-113603" x2="0" y2="0" z="-224" taxById="0"/>
+    <zone id="5" type="Town Spawn" name="Gludin Village" x1="-82856" y1="150901" x2="0" y2="0" z="-3128" taxById="0"/>
+    <zone id="6" type="Town Spawn" name="Dwarven Village" x1="115074" y1="-178115" x2="0" y2="0" z="-880" taxById="0"/>
+    <zone id="7" type="Town Spawn" name="Gludio Castle Town" x1="-14138" y1="122042" x2="0" y2="0" z="-2988" taxById="0"/>
+    <zone id="8" type="Town Spawn" name="Dion Castle Town" x1="18823" y1="145048" x2="0" y2="0" z="-3126" taxById="0"/>
+    <zone id="9" type="Town Spawn" name="Giran Castle Town" x1="83235" y1="148497" x2="0" y2="0" z="-3404" taxById="0"/>
+    <zone id="10" type="Town Spawn" name="Town of Oren" x1="80853" y1="54653" x2="0" y2="0" z="-1524" taxById="0"/>
+    <zone id="11" type="Town Spawn" name="Hunter Village" x1="117163" y1="76511" x2="0" y2="0" z="-2712" taxById="0"/>
+    <zone id="12" type="Town Spawn" name="Town of Aden" x1="147391" y1="25967" x2="0" y2="0" z="-2012" taxById="0"/>
+    <zone id="13" type="Town Spawn" name="Goddard" x1="147955" y1="-55339" x2="0" y2="0" z="-2734" taxById="0"/>
+    <zone id="14" type="Town Spawn" name="Rune Castle Town" x1="43813" y1="-47790" x2="0" y2="0" z="-797" taxById="0"/>
+    <zone id="15" type="Town Spawn" name="Heine" x1="111381" y1="219064" x2="0" y2="0" z="-3543" taxById="0"/>
+    <zone id="16" type="Town Spawn" name="Floran Village" x1="17817" y1="170079" x2="0" y2="0" z="-3530" taxById="0"/>
+    <zone id="17" type="Town Spawn" name="Ivory Tower" x1="0" y1="0" x2="0" y2="0" z="0" taxById="0"/>
+    <zone id="1" type="Underground" name="Ascetics Necropolis" x1="0" y1="0" x2="0" y2="0" z="-4844" taxById="0"/>
+    <zone id="2" type="Underground" name="Elven Ruins" x1="43100" y1="246500" x2="49400" y2="249200" z="-6614" taxById="0"/>
+    <zone id="3" type="Underground" name="School of Dark Arts" x1="-49800" y1="56879" x2="-35311" y2="43790" z="-6000" taxById="0"/>
+    <zone id="4" type="Underground" name="School of Dark Arts" x1="-47150" y1="41782" x2="-54659" y2="53065" z="-6000" taxById="0"/>
+    <zone id="5" type="Underground" name="School of Dark Arts" x1="-38741" y1="55152" x2="-55186" y2="62474" z="-6000" taxById="0"/>
+    <zone id="6" type="Underground" name="Ants Nest" x1="917" y1="165166" x2="-45452" y2="201937" z="-6000" taxById="0"/>
+    <zone id="7" type="Underground" name="Elven Fortress" x1="6068" y1="88790" x2="36734" y2="69188" z="-6000" taxById="0"/>
+    <zone id="8" type="Underground" name="Ivory Tower" x1="76563" y1="27040" x2="98577" y2="7238" z="-6000" taxById="0"/>
+    <zone id="9" type="Underground" name="Hunter Village" x1="1234573" y1="68112" x2="98542" y2="92245" z="-6000" taxById="0"/>
+    <zone id="10" type="Underground" name="DE Village" x1="34061" y1="8905" x2="-7877" y2="26384" z="-6000" taxById="0"/>
+    <zone id="11" type="Underground" name="Ruins of Despair" x1="-1231" y1="131977" x2="-31364" y2="160147" z="-5000" taxById="0"/>
+    <zone id="12" type="Underground" name="Gludin North Road" x1="-77276" y1="134858" x2="-69590" y2="120547" z="-5000" taxById="0"/>
+    <zone id="13" type="Underground" name="" x1="38116" y1="147264" x2="-69590" y2="120547" z="-5000" taxById="0"/>
+    <zone id="1" type="Water" name="Ascetics Necropolis" x1="-56190" y1="78595" x2="-55175" y2="79600" z="-3061" taxById="0"/>
+    <zone id="169" type="Fishing" name="Giran North Entrance1" x1="82480" y1="143048" x2="83321" y2="141782" z="0" taxById="0"/>
+    <zone id="170" type="Fishing" name="Giran North Entrance2" x1="82109" y1="142550" x2="82211" y2="142149" z="0" taxById="0"/>
+    <zone id="171" type="Fishing" name="Giran North Entrance3" x1="82235" y1="141780" x2="82700" y2="142718" z="0" taxById="0"/>
+    <zone id="1" type="No Landing" name="ToI" x1="109448" y1="10233" x2="118547" y2="21446" z="0" taxById="0"/>
+    <zone id="1" type="Jail" name="GM Jail" x1="-115600" y1="-250700" x2="-113500" y2="-248200" z="0" taxById="0"/>
+    <zone id="1" type="Monster Derby Track" name="Monster Derby Track" x1="11600" y1="181200" x2="14600" y2="184500" z="-3565" taxById="0"/>
+    <zone id="1" type="Olympiad Stadia" name="Stadia 1" x1="-19627" y1="-19712" x2="-22024" y2="-22322" z="-3026" taxById="0"/>
+    <zone id="2" type="Olympiad Stadia" name="Stadia 2" x1="-119100" y1="-223705" x2="-121484" y2="-226316" z="-3331" taxById="0"/>
+    <zone id="3" type="Olympiad Stadia" name="Stadia 3" x1="-103690" y1="-210300" x2="-101325" y2="-207724" z="-3331" taxById="0"/>
+    <zone id="4" type="Olympiad Stadia" name="Stadia 4" x1="-119079" y1="-206078" x2="-121438" y2="-208668" z="-3331" taxById="0"/>
+    <zone id="5" type="Olympiad Stadia" name="Stadia 5" x1="-88700" y1="-226280" x2="-86351" y2="-223722" z="-3331" taxById="0"/>
+    <zone id="6" type="Olympiad Stadia" name="Stadia 6" x1="-80586" y1="-211911" x2="-82939" y2="-214487" z="-3331" taxById="0"/>
+    <zone id="7" type="Olympiad Stadia" name="Stadia 7" x1="-88659" y1="-208652" x2="-86297" y2="-206075" z="-3331" taxById="0"/>
+    <zone id="8" type="Olympiad Stadia" name="Stadia 8" x1="-95000" y1="-219531" x2="-92632" y2="-216950" z="-3331" taxById="0"/>
+    <zone id="9" type="Olympiad Stadia" name="Stadia 9" x1="-75936" y1="-217408" x2="-78306" y2="-220017" z="-3331" taxById="0"/>
+    <zone id="10" type="Olympiad Stadia" name="Stadia 10" x1="-68560" y1="-207718" x2="-70933" y2="-210312" z="-3331" taxById="0"/>
+    <zone id="11" type="Olympiad Stadia" name="Stadia 11" x1="-78008" y1="-202528" x2="-75663" y2="-199943" z="-3331" taxById="0"/>
+    <zone id="12" type="Olympiad Stadia" name="Stadia 12" x1="-108690" y1="-217403" x2="-111072" y2="-220023" z="-3331" taxById="0"/>
+    <zone id="13" type="Olympiad Stadia" name="Stadia 13" x1="-127766" y1="-219555" x2="-125394" y2="-216946" z="-3331" taxById="0"/>
+    <zone id="14" type="Olympiad Stadia" name="Stadia 14" x1="-108428" y1="-199935" x2="-110796" y2="-202541" z="-3331" taxById="0"/>
+    <zone id="15" type="Olympiad Stadia" name="Stadia 15" x1="-88677" y1="-241444" x2="-86294" y2="-238836" z="-3331" taxById="0"/>
+    <zone id="16" type="Olympiad Stadia" name="Stadia 16" x1="-82938" y1="-247261" x2="-80580" y2="-244668" z="-3331" taxById="0"/>
+    <zone id="17" type="Olympiad Stadia" name="Stadia 17" x1="-75930" y1="-250175" x2="-78298" y2="-252779" z="-3331" taxById="0"/>
+    <zone id="18" type="Olympiad Stadia" name="Stadia 18" x1="-70920" y1="-243079" x2="-68547" y2="-240473" z="-3331" taxById="0"/>
+    <zone id="19" type="Olympiad Stadia" name="Stadia 19" x1="-75670" y1="-232712" x2="-78027" y2="-235326" z="-3331" taxById="0"/>
+    <zone id="20" type="Olympiad Stadia" name="Stadia 20" x1="-92632" y1="-249706" x2="-94999" y2="-252316" z="-3331" taxById="0"/>
+    <zone id="21" type="Olympiad Stadia" name="Stadia 21" x1="-87816" y1="-254280" x2="-86332" y2="-256466" z="-3331" taxById="0"/>
+    <zone id="22" type="Olympiad Stadia" name="Stadia 22" x1="-113332" y1="-211881" x2="-115713" y2="-214513" z="-3331" taxById="0"/>
+    <zone id="1" type="MotherTree" name="Shadow of the Mother Tree" x1="47600" y1="38290" x2="44483" y2="41745" z="-3491" taxById="0"/>
+    <zone id="2" type="MotherTree" name="Elven Village" x1="46249" y1="50036" x2="44431" y2="49176" z="-3060" taxById="0"/>
+    <zone id="3" type="MotherTree" name="East Elven Village" x1="20580" y1="51713" x2="21667" y2="50393" z="-3690" taxById="0"/>
+    <zone id="4" type="MotherTree" name="Elven Fortress" x1="24993" y1="80655" x2="25454" y2="82314" z="-3165" taxById="0"/>
+    <zone id="5" type="MotherTree" name="Iris Lake" x1="57052" y1="85445" x2="57937" y2="87057" z="-3658" taxById="0"/>
+    <zone id="1" type="Fishing" name="Water1" x1="-131072" y1="98304" x2="-98304" y2="131072" z="-3780" taxById="0"/>
+    <zone id="2" type="Fishing" name="Water2" x1="-131072" y1="131072" x2="-98304" y2="163840" z="-3780" taxById="0"/>
+    <zone id="3" type="Fishing" name="Water3" x1="-131072" y1="163840" x2="-98304" y2="196608" z="-3780" taxById="0"/>
+    <zone id="4" type="Fishing" name="Water4" x1="-131072" y1="196608" x2="-98304" y2="229376" z="-3780" taxById="0"/>
+    <zone id="5" type="Fishing" name="Water5" x1="-131072" y1="237205" x2="-98304" y2="262144" z="-3780" taxById="0"/>
+    <zone id="6" type="Fishing" name="Water6" x1="-98304" y1="65536" x2="-85504" y2="98304" z="-3780" taxById="0"/>
+    <zone id="7" type="Fishing" name="Water7" x1="-85504" y1="65536" x2="-65536" y2="80384" z="-3780" taxById="0"/>
+    <zone id="8" type="Fishing" name="Water8" x1="-85056" y1="86208" x2="-84416" y2="86848" z="-3504" taxById="0"/>
+    <zone id="9" type="Fishing" name="Water9" x1="-84416" y1="86208" x2="-82944" y2="86848" z="-5248" taxById="0"/>
+    <zone id="10" type="Fishing" name="Water10" x1="-98304" y1="121072" x2="-88304" y2="131072" z="-3780" taxById="0"/>
+    <zone id="11" type="Fishing" name="Water11" x1="-98304" y1="98304" x2="-96804" y2="99804" z="-3780" taxById="0"/>
+    <zone id="12" type="Fishing" name="Water12" x1="-68536" y1="128072" x2="-65536" y2="131072" z="-3179" taxById="0"/>
+    <zone id="13" type="Fishing" name="Water13" x1="-84032" y1="111040" x2="-83392" y2="111680" z="-3248" taxById="0"/>
+    <zone id="14" type="Fishing" name="Water14" x1="-83392" y1="111040" x2="-81920" y2="111680" z="-4992" taxById="0"/>
+    <zone id="15" type="Fishing" name="Water15" x1="-98304" y1="131072" x2="-78304" y2="163840" z="-3780" taxById="0"/>
+    <zone id="16" type="Fishing" name="Water16" x1="-69836" y1="131072" x2="-65536" y2="140072" z="-3179" taxById="0"/>
+    <zone id="17" type="Fishing" name="Water17" x1="-98304" y1="163840" x2="-65536" y2="196608" z="-3780" taxById="0"/>
+    <zone id="18" type="Fishing" name="Water18" x1="-98304" y1="196608" x2="-65536" y2="229376" z="-3780" taxById="0"/>
+    <zone id="19" type="Fishing" name="Water19" x1="-98304" y1="229376" x2="-65536" y2="262144" z="-3780" taxById="0"/>
+    <zone id="20" type="Fishing" name="Water20" x1="-65536" y1="-103304" x2="-32768" y2="-98304" z="-3780" taxById="0"/>
+    <zone id="21" type="Fishing" name="Water21" x1="-65536" y1="32768" x2="-52036" y2="65536" z="-3780" taxById="0"/>
+    <zone id="22" type="Fishing" name="Water22" x1="-52036" y1="32768" x2="-32768" y2="40768" z="-3780" taxById="0"/>
+    <zone id="23" type="Fishing" name="Water23" x1="-65536" y1="65536" x2="-55536" y2="75536" z="-3780" taxById="0"/>
+    <zone id="24" type="Fishing" name="Water24" x1="-55360" y1="78784" x2="-53888" y2="79424" z="-4832" taxById="0"/>
+    <zone id="25" type="Fishing" name="Water25" x1="-56000" y1="78784" x2="-55360" y2="79424" z="-3088" taxById="0"/>
+    <zone id="26" type="Fishing" name="Water26" x1="-65536" y1="122368" x2="-52480" y2="131072" z="-3179" taxById="0"/>
+    <zone id="27" type="Fishing" name="Water27" x1="-65536" y1="113088" x2="-57664" y2="121856" z="-3659" taxById="0"/>
+    <zone id="28" type="Fishing" name="Water28" x1="-65536" y1="131072" x2="-62464" y2="141056" z="-3179" taxById="0"/>
+    <zone id="29" type="Fishing" name="Water29" x1="-61764" y1="131072" x2="-55748" y2="132608" z="-3179" taxById="0"/>
+    <zone id="30" type="Fishing" name="Water30" x1="-65536" y1="191350" x2="-53536" y2="196608" z="-3780" taxById="0"/>
+    <zone id="31" type="Fishing" name="Water31" x1="-65535" y1="179446" x2="-62962" y2="191446" z="-3780" taxById="0"/>
+    <zone id="32" type="Fishing" name="Water32" x1="-54681" y1="180234" x2="-53049" y2="183018" z="-4702" taxById="0"/>
+    <zone id="33" type="Fishing" name="Water33" x1="-53616" y1="183018" x2="-52368" y2="184394" z="-4702" taxById="0"/>
+    <zone id="34" type="Fishing" name="Water34" x1="-41888" y1="206688" x2="-41248" y2="208160" z="-5177" taxById="0"/>
+    <zone id="35" type="Fishing" name="Water35" x1="-65536" y1="196608" x2="-53536" y2="229376" z="-3780" taxById="0"/>
+    <zone id="36" type="Fishing" name="Water36" x1="-53536" y1="220976" x2="-32768" y2="229376" z="-3780" taxById="0"/>
+    <zone id="37" type="Fishing" name="Water37" x1="-41024" y1="212576" x2="-32768" y2="220976" z="-3780" taxById="0"/>
+    <zone id="38" type="Fishing" name="Water38" x1="-53536" y1="212576" x2="-45280" y2="220976" z="-3780" taxById="0"/>
+    <zone id="39" type="Fishing" name="Water39" x1="-53536" y1="202208" x2="-47584" y2="209584" z="-3780" taxById="0"/>
+    <zone id="40" type="Fishing" name="Water40" x1="-45280" y1="212576" x2="-41024" y2="220976" z="-3780" taxById="0"/>
+    <zone id="41" type="Fishing" name="Water41" x1="-41888" y1="206048" x2="-41248" y2="206688" z="-3434" taxById="0"/>
+    <zone id="42" type="Fishing" name="Water42" x1="-65536" y1="229376" x2="-32768" y2="262144" z="-3780" taxById="0"/>
+    <zone id="43" type="Fishing" name="Water43" x1="-32768" y1="-101304" x2="-29768" y2="-98304" z="-3780" taxById="0"/>
+    <zone id="44" type="Fishing" name="Water44" x1="-23168" y1="13184" x2="-22528" y2="13824" z="-3248" taxById="0"/>
+    <zone id="45" type="Fishing" name="Water45" x1="-22528" y1="13184" x2="-21056" y2="13824" z="-4991" taxById="0"/>
+    <zone id="46" type="Fishing" name="Water46" x1="-12972" y1="57536" x2="-5972" y2="65536" z="-3784" taxById="0"/>
+    <zone id="47" type="Fishing" name="Water47" x1="-5840" y1="60646" x2="-3840" y2="62646" z="-3788" taxById="0"/>
+    <zone id="48" type="Fishing" name="Water48" x1="-25472" y1="77056" x2="-24832" y2="77696" z="-3520" taxById="0"/>
+    <zone id="49" type="Fishing" name="Water49" x1="-24832" y1="77056" x2="-23360" y2="77696" z="-5263" taxById="0"/>
+    <zone id="50" type="Fishing" name="Water50" x1="-32768" y1="209376" x2="-10000" y2="229376" z="-3780" taxById="0"/>
+    <zone id="51" type="Fishing" name="Water51" x1="4608" y1="65480" x2="32768" y2="70344" z="-3794" taxById="0"/>
+    <zone id="52" type="Fishing" name="Water52" x1="32768" y1="32768" x2="60672" y2="65536" z="-3780" taxById="0"/>
+    <zone id="53" type="Fishing" name="Water53" x1="32768" y1="65536" x2="63568" y2="90536" z="-3780" taxById="0"/>
+    <zone id="54" type="Fishing" name="Water54" x1="63236" y1="73140" x2="65536" y2="75440" z="-3780" taxById="0"/>
+    <zone id="55" type="Fishing" name="Water55" x1="43517" y1="116837" x2="52517" y2="126093" z="-3780" taxById="0"/>
+    <zone id="56" type="Fishing" name="Water56" x1="48773" y1="115910" x2="50237" y2="116709" z="-2227" taxById="0"/>
+    <zone id="57" type="Fishing" name="Water57" x1="46597" y1="111629" x2="49597" y2="115129" z="-2259" taxById="0"/>
+    <zone id="58" type="Fishing" name="Water58" x1="49172" y1="115129" x2="50136" y2="116869" z="-2259" taxById="0"/>
+    <zone id="59" type="Fishing" name="Water59" x1="48000" y1="115129" x2="49172" y2="116357" z="-2259" taxById="0"/>
+    <zone id="60" type="Fishing" name="Water60" x1="44928" y1="126976" x2="45568" y2="127616" z="-3776" taxById="0"/>
+    <zone id="61" type="Fishing" name="Water61" x1="44928" y1="125504" x2="45568" y2="126976" z="-5504" taxById="0"/>
+    <zone id="62" type="Fishing" name="Water62" x1="41917" y1="139480" x2="51917" y2="152770" z="-3749" taxById="0"/>
+    <zone id="63" type="Fishing" name="Water63" x1="39296" y1="143616" x2="39936" y2="144256" z="-3728" taxById="0"/>
+    <zone id="64" type="Fishing" name="Water64" x1="39936" y1="143616" x2="41408" y2="144256" z="-5471" taxById="0"/>
+    <zone id="65" type="Fishing" name="Water65" x1="32768" y1="181240" x2="65536" y2="196608" z="-3780" taxById="0"/>
+    <zone id="66" type="Fishing" name="Water66" x1="32768" y1="175600" x2="44032" y2="181240" z="-3780" taxById="0"/>
+    <zone id="67" type="Fishing" name="Water67" x1="57472" y1="175600" x2="65536" y2="181240" z="-3780" taxById="0"/>
+    <zone id="68" type="Fishing" name="Water68" x1="42496" y1="169984" x2="43136" y2="170624" z="-3328" taxById="0"/>
+    <zone id="69" type="Fishing" name="Water69" x1="43136" y1="169984" x2="44608" y2="170624" z="-5071" taxById="0"/>
+    <zone id="70" type="Fishing" name="Water70" x1="32768" y1="196608" x2="65536" y2="229376" z="-3780" taxById="0"/>
+    <zone id="71" type="Fishing" name="Water71" x1="65536" y1="4768" x2="75536" y2="32768" z="-3780" taxById="0"/>
+    <zone id="72" type="Fishing" name="Water72" x1="75536" y1="27768" x2="98304" y2="32768" z="-3780" taxById="0"/>
+    <zone id="73" type="Fishing" name="Water73" x1="84727" y1="32768" x2="91727" y2="53768" z="-3780" taxById="0"/>
+    <zone id="74" type="Fishing" name="Water74" x1="65536" y1="91304" x2="98304" y2="98304" z="-3772" taxById="0"/>
+    <zone id="75" type="Fishing" name="Water75" x1="65536" y1="71304" x2="70536" y2="91304" z="-3772" taxById="0"/>
+    <zone id="76" type="Fishing" name="Water76" x1="73984" y1="78080" x2="74624" y2="78720" z="-3472" taxById="0"/>
+    <zone id="77" type="Fishing" name="Water77" x1="74624" y1="78080" x2="76096" y2="78720" z="-5215" taxById="0"/>
+    <zone id="78" type="Fishing" name="Water78" x1="78304" y1="139840" x2="98304" y2="163840" z="-3780" taxById="0"/>
+    <zone id="79" type="Fishing" name="Water79" x1="65536" y1="163840" x2="74752" y2="196608" z="-3780" taxById="0"/>
+    <zone id="80" type="Fishing" name="Water80" x1="74752" y1="163840" x2="85215" y2="173976" z="-3780" taxById="0"/>
+    <zone id="81" type="Fishing" name="Water81" x1="74752" y1="173976" x2="83244" y2="178267" z="-3780" taxById="0"/>
+    <zone id="82" type="Fishing" name="Water82" x1="74752" y1="178267" x2="78031" y2="180291" z="-3780" taxById="0"/>
+    <zone id="83" type="Fishing" name="Water83" x1="91149" y1="163840" x2="98304" y2="166737" z="-3780" taxById="0"/>
+    <zone id="84" type="Fishing" name="Water84" x1="95485" y1="166737" x2="98304" y2="193105" z="-3780" taxById="0"/>
+    <zone id="85" type="Fishing" name="Water85" x1="92290" y1="173976" x2="95485" y2="185103" z="-3780" taxById="0"/>
+    <zone id="86" type="Fishing" name="Water86" x1="92290" y1="193105" x2="98304" y2="196608" z="-3780" taxById="0"/>
+    <zone id="87" type="Fishing" name="Water87" x1="93696" y1="224128" x2="98304" y2="229376" z="-3780" taxById="0"/>
+    <zone id="88" type="Fishing" name="Water88" x1="93056" y1="196608" x2="98304" y2="201216" z="-3780" taxById="0"/>
+    <zone id="89" type="Fishing" name="Water89" x1="65536" y1="196608" x2="76032" y2="200320" z="-3780" taxById="0"/>
+    <zone id="90" type="Fishing" name="Water90" x1="70024" y1="222217" x2="77862" y2="229376" z="-3780" taxById="0"/>
+    <zone id="91" type="Fishing" name="Water91" x1="65536" y1="200320" x2="70024" y2="229376" z="-3780" taxById="0"/>
+    <zone id="92" type="Fishing" name="Water92" x1="70024" y1="200320" x2="79174" y2="222217" z="-3780" taxById="0"/>
+    <zone id="93" type="Fishing" name="Water93" x1="77862" y1="224128" x2="93696" y2="229376" z="-3780" taxById="0"/>
+    <zone id="94" type="Fishing" name="Water94" x1="80192" y1="201216" x2="98304" y2="224128" z="-3780" taxById="0"/>
+    <zone id="95" type="Fishing" name="Water95" x1="81856" y1="196608" x2="93056" y2="201216" z="-3780" taxById="0"/>
+    <zone id="96" type="Fishing" name="Water96" x1="79360" y1="208897" x2="80000" y2="209537" z="-3786" taxById="0"/>
+    <zone id="97" type="Fishing" name="Water97" x1="80000" y1="208897" x2="81472" y2="209537" z="-5529" taxById="0"/>
+    <zone id="98" type="Fishing" name="Water98" x1="79174" y1="209727" x2="80192" y2="224128" z="-3780" taxById="0"/>
+    <zone id="99" type="Fishing" name="Water99" x1="79174" y1="201216" x2="80192" y2="208704" z="-3780" taxById="0"/>
+    <zone id="100" type="Fishing" name="Water100" x1="79010" y1="246661" x2="86498" y2="254711" z="-10886" taxById="0"/>
+    <zone id="101" type="Fishing" name="Water101" x1="84195" y1="239660" x2="86179" y2="242732" z="-4203" taxById="0"/>
+    <zone id="102" type="Fishing" name="Water102" x1="82979" y1="241472" x2="84195" y2="241920" z="-6763" taxById="0"/>
+    <zone id="103" type="Fishing" name="Water103" x1="80356" y1="245013" x2="84644" y2="245845" z="-8898" taxById="0"/>
+    <zone id="104" type="Fishing" name="Water104" x1="80303" y1="258157" x2="84591" y2="258989" z="-8898" taxById="0"/>
+    <zone id="105" type="Fishing" name="Water105" x1="65536" y1="229376" x2="98304" y2="262144" z="-3780" taxById="0"/>
+    <zone id="106" type="Fishing" name="Water106" x1="78624" y1="254711" x2="82336" y2="255593" z="-10886" taxById="0"/>
+    <zone id="107" type="Fishing" name="Water107" x1="82785" y1="254711" x2="86497" y2="255593" z="-10886" taxById="0"/>
+    <zone id="108" type="Fishing" name="Water108" x1="82336" y1="255351" x2="82785" y2="255593" z="-10886" taxById="0"/>
+    <zone id="109" type="Fishing" name="Water109" x1="98304" y1="-229376" x2="131072" y2="-196608" z="-3780" taxById="0"/>
+    <zone id="110" type="Fishing" name="Water110" x1="119040" y1="-196608" x2="131072" y2="-178624" z="-3780" taxById="0"/>
+    <zone id="111" type="Fishing" name="Water111" x1="98305" y1="27768" x2="120321" y2="32768" z="-3780" taxById="0"/>
+    <zone id="112" type="Fishing" name="Water112" x1="103091" y1="37760" x2="128091" y2="62760" z="-4656" taxById="0"/>
+    <zone id="113" type="Fishing" name="Water113" x1="110208" y1="84224" x2="110848" y2="84864" z="-4864" taxById="0"/>
+    <zone id="114" type="Fishing" name="Water114" x1="110848" y1="84224" x2="112320" y2="84864" z="-6631" taxById="0"/>
+    <zone id="115" type="Fishing" name="Water115" x1="98304" y1="138240" x2="131072" y2="163840" z="-3780" taxById="0"/>
+    <zone id="116" type="Fishing" name="Water116" x1="112096" y1="142624" x2="119232" y2="147604" z="-2892" taxById="0"/>
+    <zone id="117" type="Fishing" name="Water117" x1="117509" y1="136740" x2="122009" y2="138240" z="-3780" taxById="0"/>
+    <zone id="118" type="Fishing" name="Water118" x1="117509" y1="136740" x2="122009" y2="138240" z="-3780" taxById="0"/>
+    <zone id="119" type="Fishing" name="Water119" x1="117509" y1="136740" x2="122009" y2="138240" z="-3780" taxById="0"/>
+    <zone id="120" type="Fishing" name="Water120" x1="114560" y1="132480" x2="115200" y2="133120" z="-3184" taxById="0"/>
+    <zone id="121" type="Fishing" name="Water121" x1="115200" y1="132480" x2="116672" y2="133120" z="-4928" taxById="0"/>
+    <zone id="122" type="Fishing" name="Water122" x1="98304" y1="163840" x2="131072" y2="167840" z="-3780" taxById="0"/>
+    <zone id="123" type="Fishing" name="Water123" x1="98304" y1="167840" x2="102304" y2="196608" z="-3780" taxById="0"/>
+    <zone id="124" type="Fishing" name="Water124" x1="124072" y1="167840" x2="131072" y2="196608" z="-3780" taxById="0"/>
+    <zone id="125" type="Fishing" name="Water125" x1="102304" y1="191608" x2="124072" y2="196608" z="-3780" taxById="0"/>
+    <zone id="126" type="Fishing" name="Water126" x1="121672" y1="186199" x2="124072" y2="189151" z="-3780" taxById="0"/>
+    <zone id="127" type="Fishing" name="Water127" x1="102304" y1="184170" x2="105652" y2="187250" z="-3780" taxById="0"/>
+    <zone id="128" type="Fishing" name="Water128" x1="102304" y1="168567" x2="106804" y2="173567" z="-3780" taxById="0"/>
+    <zone id="129" type="Fishing" name="Water129" x1="107520" y1="173696" x2="108160" y2="174336" z="-3776" taxById="0"/>
+    <zone id="130" type="Fishing" name="Water130" x1="108160" y1="173696" x2="109632" y2="174336" z="-5529" taxById="0"/>
+    <zone id="131" type="Fishing" name="Water131" x1="98304" y1="196608" x2="131072" y2="229376" z="-3780" taxById="0"/>
+    <zone id="132" type="Fishing" name="Water132" x1="98304" y1="229376" x2="131072" y2="262144" z="-3780" taxById="0"/>
+    <zone id="133" type="Fishing" name="Water133" x1="131072" y1="-229376" x2="163840" y2="-196608" z="-3780" taxById="0"/>
+    <zone id="134" type="Fishing" name="Water134" x1="131072" y1="-196608" x2="163840" y2="-178608" z="-3780" taxById="0"/>
+    <zone id="135" type="Fishing" name="Water135" x1="145081" y1="25139" x2="149881" y2="29939" z="-2528" taxById="0"/>
+    <zone id="136" type="Fishing" name="Water136" x1="131059" y1="32768" x2="163827" y2="65536" z="-3776" taxById="0"/>
+    <zone id="137" type="Fishing" name="Water137" x1="136648" y1="79304" x2="137400" y2="80056" z="-3736" taxById="0"/>
+    <zone id="138" type="Fishing" name="Water138" x1="137400" y1="79360" x2="138816" y2="80000" z="-5519" taxById="0"/>
+    <zone id="139" type="Fishing" name="Water139" x1="137472" y1="65536" x2="163840" y2="98304" z="-3780" taxById="0"/>
+    <zone id="140" type="Fishing" name="Water140" x1="131072" y1="126072" x2="136072" y2="131072" z="-3780" taxById="0"/>
+    <zone id="141" type="Fishing" name="Water141" x1="163840" y1="-229376" x2="196608" y2="-196608" z="-3780" taxById="0"/>
+    <zone id="142" type="Fishing" name="Water142" x1="163840" y1="-196608" x2="168840" y2="-186608" z="-3780" taxById="0"/>
+    <zone id="143" type="Fishing" name="Water143" x1="173411" y1="-187756" x2="186042" y2="-182534" z="-4465" taxById="0"/>
+    <zone id="144" type="Fishing" name="Water144" x1="174206" y1="-182687" x2="176749" y2="-179167" z="-2066" taxById="0"/>
+    <zone id="145" type="Fishing" name="Water145" x1="170908" y1="-116846" x2="173748" y2="-113953" z="-4033" taxById="0"/>
+    <zone id="146" type="Fishing" name="Water146" x1="170926" y1="-113936" x2="173766" y2="-111043" z="-5256" taxById="0"/>
+    <zone id="147" type="Fishing" name="Water147" x1="163840" y1="65760" x2="173840" y2="95072" z="-3780" taxById="0"/>
+    <zone id="148" type="Fishing" name="Water148" x1="168576" y1="-17920" x2="169216" y2="-17280" z="-3248" taxById="0"/>
+    <zone id="149" type="Fishing" name="Water149" x1="169216" y1="-17920" x2="170688" y2="-17280" z="-4991" taxById="0"/>
+    <zone id="150" type="Fishing" name="Water150" x1="32768" y1="-98304" x2="65536" y2="-65536" z="-3780" taxById="0"/>
+    <zone id="151" type="Fishing" name="Water151" x1="32768" y1="-65536" x2="65536" y2="-32768" z="-3784" taxById="0"/>
+    <zone id="152" type="Fishing" name="Water152" x1="65536" y1="-40960" x2="98304" y2="-32768" z="-3780" taxById="0"/>
+    <zone id="153" type="Fishing" name="Water153" x1="91829" y1="-55930" x2="95637" y2="-50266" z="-2633" taxById="0"/>
+    <zone id="154" type="Fishing" name="Water154" x1="87765" y1="-54554" x2="91829" y2="-50266" z="-2633" taxById="0"/>
+    <zone id="155" type="Fishing" name="Water155" x1="84947" y1="-50234" x2="90133" y2="-46202" z="-3152" taxById="0"/>
+    <zone id="156" type="Fishing" name="Water156" x1="76003" y1="-46368" x2="84947" y2="-39968" z="-3248" taxById="0"/>
+    <zone id="157" type="Fishing" name="Water157" x1="68852" y1="-62008" x2="74036" y2="-56192" z="-3161" taxById="0"/>
+    <zone id="158" type="Fishing" name="Water158" x1="69480" y1="-56192" x2="77032" y2="-53203" z="-3161" taxById="0"/>
+    <zone id="159" type="Fishing" name="Water159" x1="71311" y1="-53203" x2="76175" y2="-50292" z="-3161" taxById="0"/>
+    <zone id="160" type="Fishing" name="Water160" x1="75059" y1="-63591" x2="78355" y2="-57517" z="-2352" taxById="0"/>
+    <zone id="161" type="Fishing" name="Water161" x1="78355" y1="-65184" x2="83859" y2="-51872" z="-2352" taxById="0"/>
+    <zone id="162" type="Fishing" name="Water162" x1="83859" y1="-64826" x2="87187" y2="-55418" z="-2352" taxById="0"/>
+    <zone id="163" type="Fishing" name="Water163" x1="87187" y1="-62909" x2="90963" y2="-58301" z="-2352" taxById="0"/>
+    <zone id="164" type="Fishing" name="Water164" x1="77283" y1="-51872" x2="83747" y2="-49440" z="-2352" taxById="0"/>
+    <zone id="165" type="Fishing" name="Water165" x1="83859" y1="-55418" x2="86227" y2="-52602" z="-2352" taxById="0"/>
+    <zone id="166" type="Fishing" name="Water166" x1="69635" y1="-47328" x2="76003" y2="-39776" z="-3248" taxById="0"/>
+    <zone id="167" type="Fishing" name="Water167" x1="87187" y1="-58301" x2="89235" y2="-56541" z="-2352" taxById="0"/>
+    <zone id="168" type="Fishing" name="Water168" x1="76800" y1="-32768" x2="98304" y2="-18432" z="-3780" taxById="0"/>
+</data>

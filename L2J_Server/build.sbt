@@ -9,8 +9,8 @@ unmanagedJars in Compile ++= Seq(
 		libDir / "hibernate3.jar"
 	)
 	
-javaSource in Compile := baseDirectory.value / "java"
+unmanagedSourceDirectories in Compile += baseDirectory.value / "java"
 
 artifactName := { (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
   "l2jserver." + artifact.extension
-}	
+}

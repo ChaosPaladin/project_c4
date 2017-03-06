@@ -313,7 +313,6 @@ $MYG < ../sql/spawnlist.sql &> /dev/null
 $MYG < ../sql/teleport.sql &> /dev/null
 $MYG < ../sql/topic.sql &> /dev/null
 $MYG < ../sql/weapon.sql &> /dev/null
-$MYG < ../sql/zone.sql &> /dev/null
 }
 
 experimental(){

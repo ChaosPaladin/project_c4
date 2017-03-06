@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
+import la2.world.model.data.xml.XmlLoader;
 import net.sf.l2j.Config;
 import net.sf.l2j.L2DatabaseFactory;
 import net.sf.l2j.gameserver.model.L2Object;
@@ -136,48 +137,15 @@ public class ZoneManager
     	this.load();
     }
     
-    // =========================================================
-    // Method - Private
-    private void load()
-    {
-    	java.sql.Connection con = null;
-        try
-        {
-            con = L2DatabaseFactory.getInstance().getConnection();
-            PreparedStatement statement = con.prepareStatement("Select * from zone order by id");
-            ResultSet rs = statement.executeQuery();
-
-            String columnNameId                 = "id";
-            String columnNameName               = "name";
-            String columnNameTaxBy              = "taxById";
-            String columnNameType               = "type";
-            String columnNameX1                 = "x1";
-            String columnNameX2                 = "x2";
-            String columnNameY1                 = "y1";
-            String columnNameY2                 = "y2";
-            String columnNameZ                  = "z";
-
-            Zone zone;
-            while (rs.next())
-            {
-                zone = getZone(rs.getString(columnNameType).trim(), rs.getString(columnNameName).trim());
-                zone.setId(rs.getInt(columnNameId));
-                zone.setTaxById(rs.getInt(columnNameTaxBy));
-                zone.addCoord(rs.getInt(columnNameX1), rs.getInt(columnNameY1), rs.getInt(columnNameX2), rs.getInt(columnNameY2), rs.getInt(columnNameZ));
-            }
-            statement.close();
-
-            String msgSpace = " ";
-            String msgZoneLoaded = "Zone: Loaded ";
-            for (ZoneType zt: getZoneTypes())
-                _log.info(msgZoneLoaded + zt.getZones().size() + msgSpace + zt.getTypeName());
-        }
-        catch (Exception e)
-        {
-            e.getMessage();
-            e.printStackTrace();
-        }
-        finally {try { con.close(); } catch (Exception e) {}}
+    private void load() {
+    	XmlLoader.load("zone.xml").list.stream().filter(x -> x.isZone()).map(x -> x.asZone()).forEach(entry -> {
+    		final Zone zone = getZone(entry.type, entry.name);
+    		zone.setId(entry.id);
+    		zone.setTaxById(entry.taxById);
+    		zone.addCoord(entry.x1, entry.y1, entry.x2, entry.y2, entry.z);
+    	});
+        for (ZoneType zt: getZoneTypes())
+            _log.info("Zone: Loaded " + zt.getZones().size() + " " + zt.getTypeName());
     }
 
     // =========================================================
