@@ -62,6 +62,5 @@ DROP TABLE IF EXISTS skill_learn;
 DROP TABLE IF EXISTS skill_spellbooks;
 DROP TABLE IF EXISTS skill_trees;
 DROP TABLE IF EXISTS spawnlist;
-DROP TABLE IF EXISTS teleport;
 DROP TABLE IF EXISTS topic;
 DROP TABLE IF EXISTS weapon;

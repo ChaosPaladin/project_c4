@@ -310,7 +310,6 @@ $MYG < ../sql/skill_learn.sql &> /dev/null
 $MYG < ../sql/skill_spellbooks.sql &> /dev/null
 $MYG < ../sql/skill_trees.sql &> /dev/null
 $MYG < ../sql/spawnlist.sql &> /dev/null
-$MYG < ../sql/teleport.sql &> /dev/null
 $MYG < ../sql/topic.sql &> /dev/null
 $MYG < ../sql/weapon.sql &> /dev/null
 }
