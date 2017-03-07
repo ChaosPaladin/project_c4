@@ -59,7 +59,6 @@ DROP TABLE IF EXISTS seven_signs_festival;
 DROP TABLE IF EXISTS seven_signs_status;
 DROP TABLE IF EXISTS siege_clans;
 DROP TABLE IF EXISTS skill_learn;
-DROP TABLE IF EXISTS skill_spellbooks;
 DROP TABLE IF EXISTS spawnlist;
 DROP TABLE IF EXISTS topic;
 DROP TABLE IF EXISTS weapon;
