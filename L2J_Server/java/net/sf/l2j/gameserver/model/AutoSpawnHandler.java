@@ -1,18 +1,20 @@
 package net.sf.l2j.gameserver.model;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.TreeMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
+import la2.world.model.data.xml.XmlData;
+import la2.world.model.data.xml.XmlEntry;
+import la2.world.model.data.xml.XmlLoader;
+import la2.world.model.data.xml.XmlRandomSpawnLoc;
 import net.sf.l2j.Config;
-import net.sf.l2j.L2DatabaseFactory;
 import net.sf.l2j.gameserver.Announcements;
 import net.sf.l2j.gameserver.MapRegionTable;
 import net.sf.l2j.gameserver.NpcTable;
@@ -64,10 +66,9 @@ public class AutoSpawnHandler
     protected Map<Integer, ScheduledFuture> _runningSpawns;
     protected boolean _activeState = true;
     
-	public AutoSpawnHandler()
-	{
-        _registeredSpawns = new FastMap<Integer, AutoSpawnInstance>();
-        _runningSpawns = new FastMap<Integer, ScheduledFuture>();
+	public AutoSpawnHandler() {
+        _registeredSpawns = new TreeMap<Integer, AutoSpawnInstance>();
+        _runningSpawns = new TreeMap<Integer, ScheduledFuture>();
         
         restoreSpawnData();
 	}
@@ -84,60 +85,28 @@ public class AutoSpawnHandler
 	{
 		return _registeredSpawns.size();
 	}
-    
-    private void restoreSpawnData()
-    {
-        int numLoaded = 0;
-        java.sql.Connection con = null;
-        
-        try
-        {
-            PreparedStatement statement = null;
-            PreparedStatement statement2 = null;
-            ResultSet rs = null;
-            ResultSet rs2 = null;
-
-            con = L2DatabaseFactory.getInstance().getConnection();
-
-            // Restore spawn group data, then the location data.
-            statement = con.prepareStatement("SELECT * FROM random_spawn ORDER BY groupId ASC");
-            rs = statement.executeQuery();
-            
-            while (rs.next())
-            {
-                // Register random spawn group, set various options on the created spawn instance.
-                AutoSpawnInstance spawnInst = registerSpawn(rs.getInt("npcId"), rs.getInt("initialDelay"), rs.getInt("respawnDelay"), rs.getInt("despawnDelay"));
-                
-                spawnInst.setSpawnCount(rs.getInt("count"));
-                spawnInst.setBroadcast(rs.getBoolean("broadcastSpawn"));
-                spawnInst.setRandomSpawn(rs.getBoolean("randomSpawn"));
-                numLoaded++;
-
-                // Restore the spawn locations for this spawn group/instance.
-                statement2 = con.prepareStatement("SELECT * FROM random_spawn_loc WHERE groupId=?");
-                statement2.setInt(1, rs.getInt("groupId"));
-                rs2 = statement2.executeQuery();
-
-                while (rs2.next())
-                {
-                    // Add each location to the spawn group/instance.
-                    spawnInst.addSpawnLocation(rs2.getInt("x"), rs2.getInt("y"), rs2.getInt("z"), rs2.getInt("heading"));
-                }
-                
-                statement2.close();
-            }
-
-            statement.close();
-            
-            if (Config.DEBUG)
-                _log.config("AutoSpawnHandler: Loaded " + numLoaded + " spawn group(s) from the database.");
-        }
-        catch (Exception e) {
-            _log.warning("AutoSpawnHandler: Could not restore spawn data: " + e);
-        } 
-        finally {
-            try { con.close(); } catch (Exception e) {}
-        }
+	
+    private void restoreSpawnData() {
+    	final XmlData randomSpawn = XmlLoader.load("random-spawn.xml");
+        final XmlData randomSpawnLoc = XmlLoader.load("random-spawn-loc.xml");
+        int[] count =  new int[]{0};
+        randomSpawn.list.stream().map(XmlEntry::asRandomSpawn).forEach(item -> {
+        	AutoSpawnInstance sInstance = registerSpawn(item.npcId, item.initialDelay, item.respawnDelay, item.despawnDelay);
+        	sInstance.setSpawnCount(item.count);
+        	sInstance.setBroadcast(item.broadcastSpawn);
+        	sInstance.setRandomSpawn(item.randomSpawn);
+        	count[0]++;
+        	randomSpawnLoc.list.forEach(entry -> {
+        		if(entry.isRandomSpawnLoc()) {
+        			if(entry.asRandomSpawnLoc().groupId == item.groupId) {
+        				final XmlRandomSpawnLoc rSpawn = entry.asRandomSpawnLoc();
+        				sInstance.addSpawnLocation(rSpawn.x, rSpawn.y, rSpawn.z, rSpawn.heading);
+        			}
+        		}
+        	});
+        });
+        if (Config.DEBUG)
+            _log.config("AutoSpawnHandler: Loaded " + count[0] + " spawn group(s) from the database.");
     }
 	
     /**

@@ -10,6 +10,21 @@ public class XmlEntry {
 		return (XmlFishingSkillLearn) this;
 	}
 
+	public final boolean isRandomSpawn() {
+		return this instanceof XmlRandomSpawn;
+	}
+	
+	public final XmlRandomSpawn asRandomSpawn() {
+		return (XmlRandomSpawn) this;
+	}
+	
+	public final boolean isRandomSpawnLoc() {
+		return this instanceof XmlRandomSpawnLoc;
+	}
+	
+	public final XmlRandomSpawnLoc asRandomSpawnLoc() {
+		return (XmlRandomSpawnLoc) this;
+	}
 	public final boolean isNpcSkillLearn() {
 		return this instanceof XmlNpcSkillLearn;
 	}

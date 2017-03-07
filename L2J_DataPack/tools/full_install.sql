@@ -52,8 +52,6 @@ DROP TABLE IF EXISTS pets;
 DROP TABLE IF EXISTS pets_stats;
 DROP TABLE IF EXISTS posts;
 DROP TABLE IF EXISTS raidboss_spawnlist;
-DROP TABLE IF EXISTS random_spawn;
-DROP TABLE IF EXISTS random_spawn_loc;
 DROP TABLE IF EXISTS seven_signs;
 DROP TABLE IF EXISTS seven_signs_festival;
 DROP TABLE IF EXISTS seven_signs_status;
