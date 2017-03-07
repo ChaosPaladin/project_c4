@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class XmlData {
 	@XmlElements({
 		@XmlElement(name = "fishingskilllearn", type = XmlFishingSkillLearn.class),
+		@XmlElement(name = "npc-skill-learn", type = XmlNpcSkillLearn.class),
 		@XmlElement(name = "skill-spellbook", type = XmlSkillSpellbook.class),
 		@XmlElement(name = "skilllearn", type = XmlSkillLearn.class),
 		@XmlElement(name = "teleport", type = XmlTeleport.class),

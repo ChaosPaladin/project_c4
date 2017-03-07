@@ -22,10 +22,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
+import la2.world.model.creature.PlayerClass;
+import la2.world.model.data.xml.XmlEntry;
+import la2.world.model.data.xml.XmlLoader;
 import net.sf.l2j.Config;
 import net.sf.l2j.L2DatabaseFactory;
 import net.sf.l2j.gameserver.model.L2DropData;
@@ -256,32 +260,16 @@ public class NpcTable
 				_log.severe("NPCTable: Error reading NPC drop data: " + e);
 			}
 
-			try 
-			{
-			    PreparedStatement statement3 = con.prepareStatement("SELECT " + L2DatabaseFactory.getInstance().safetyString(new String[] {"npc_id", "class_id"}) + " FROM skill_learn");
-			    ResultSet learndata = statement3.executeQuery();
-			    
-			    while (learndata.next())
-			    {
-			        int npcId = learndata.getInt("npc_id");
-			        int classId = learndata.getInt("class_id");
-			        L2NpcTemplate npc = getTemplate(npcId);
-                    
-			        if (npc == null)
-			        {
-			            _log.warning("NPCTable: Error getting NPC template ID " + npcId + " while trying to load skill trainer data.");
-			            continue;
-			        }
-                    
-			        npc.addTeachInfo(ClassId.values()[classId]);
-			    }
-			    
-			    learndata.close();
-			    statement3.close();
-			} 
-            catch (Exception e) {
-			    _log.severe("NPCTable: Error reading NPC trainer data: " + e);
-			}
+			XmlLoader.load("npc-skill-learn.xml").list.stream().
+				filter(XmlEntry::isNpcSkillLearn).
+				map(XmlEntry::asNpcSkillLearn).
+				forEach(entry -> {
+					final L2NpcTemplate npc = getTemplate(entry.npcId);
+					if(npc != null) {
+						npc.addTeachInfo(map(entry.pClass));
+					} else
+						_log.warning("NPCTable: Error getting NPC template ID " + entry.npcId + " while trying to load skill trainer data.");
+				});
             
 			try 
             {
@@ -543,5 +531,10 @@ public class NpcTable
 				list.add(t);
 
 		return list.toArray(new L2NpcTemplate[list.size()]);
+	}
+	
+	//maping from new PlayerClass enum to old ClassId
+	public static ClassId map(PlayerClass pClass) {
+		return ClassId.values()[pClass.id];
 	}
 }

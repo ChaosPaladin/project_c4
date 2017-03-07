@@ -9,6 +9,14 @@ public class XmlEntry {
 	public final XmlFishingSkillLearn asFishingSkillLearn() {
 		return (XmlFishingSkillLearn) this;
 	}
+
+	public final boolean isNpcSkillLearn() {
+		return this instanceof XmlNpcSkillLearn;
+	}
+	
+	public final XmlNpcSkillLearn asNpcSkillLearn() {
+		return (XmlNpcSkillLearn) this;
+	}
 	
 	public final boolean isSkillSpellbook() {
 		return this instanceof XmlSkillSpellbook;
