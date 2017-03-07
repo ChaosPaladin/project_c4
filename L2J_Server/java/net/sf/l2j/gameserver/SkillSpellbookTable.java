@@ -22,7 +22,7 @@ public final class SkillSpellbookTable {
     
 	private SkillSpellbookTable() {
 		skillSpellbooks = new TreeMap<Integer, Integer>();
-		XmlLoader.load("skill_spellbook.xml").list.stream().
+		XmlLoader.load("skill_spellbooks.xml").list.stream().
 			filter(XmlEntry::isSkillSpellbook).
 			map(XmlEntry::asSkillSpellbook).
 			forEach(entry -> {
