@@ -81,6 +81,7 @@ public class L2FolkInstance extends L2NpcInstance
 		if (counts == 0)
 		{
 		    NpcHtmlMessage html = new NpcHtmlMessage(1);
+		    //FIXME incorect scan for skill learn list, must filter
 		    int minlevel = SkillTreeTable.getInstance().getMinLevelForNewSkill(player, classId);
 		    
 		    if (minlevel > 0)

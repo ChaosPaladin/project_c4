@@ -18,6 +18,8 @@
  */
 package net.sf.l2j.gameserver.model;
 
+import la2.world.model.data.xml.XmlSkillLearn;
+
 /**
  * This class ...
  * 
@@ -26,26 +28,30 @@ package net.sf.l2j.gameserver.model;
 public final class L2SkillLearn
 {
 	// these two build the primary key
-	private final int _id;
-	private final int _level;
+	public final int id;
+	public final int level;
 	
 	// not needed, just for easier debug
-	private final String _name;
+	public final String name;
 	
-	private final int _spCost;
-	private final int _minLevel;
-	private final int _costid;
-	private final int _costcount;
+	public final int sp;
+	public final int minLevel;
+	public final int costid;
+	public final int costcount;
+	
+	public L2SkillLearn(XmlSkillLearn entry) {
+		this(entry.skillId, entry.level, entry.minLevel, entry.name, entry.sp, entry.costid, entry.costcount);
+	}
 	
 	public L2SkillLearn(int id, int lvl, int minLvl, String name, int cost, int costid, int costcount)
 	{
-		_id = id;
-		_level = lvl;
-		_minLevel = minLvl;
-		_name = name.intern();
-		_spCost = cost;
-		_costid = costid;
-		_costcount = costcount;
+		this.id = id;
+		this.level = lvl;
+		this.minLevel = minLvl;
+		this.name = name.intern();
+		this.sp = cost;
+		this.costid = costid;
+		this.costcount = costcount;
 	}
 	
 	/**
@@ -53,7 +59,7 @@ public final class L2SkillLearn
 	 */
 	public int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	/**
@@ -61,7 +67,7 @@ public final class L2SkillLearn
 	 */
 	public int getLevel()
 	{
-		return _level;
+		return level;
 	}
 
 	/**
@@ -69,7 +75,7 @@ public final class L2SkillLearn
 	 */
 	public int getMinLevel()
 	{
-		return _minLevel;
+		return minLevel;
 	}
 
 	/**
@@ -77,7 +83,7 @@ public final class L2SkillLearn
 	 */
 	public String getName()
 	{
-		return _name;
+		return name;
 	}
 
 	/**
@@ -85,14 +91,14 @@ public final class L2SkillLearn
 	 */
 	public int getSpCost()
 	{
-		return _spCost;
+		return sp;
 	}
 	public int getIdCost()
 	{
-		return _costid;
+		return costid;
 	}
 	public int getCostCount()
 	{
-		return _costcount;
+		return costcount;
 	}
 }

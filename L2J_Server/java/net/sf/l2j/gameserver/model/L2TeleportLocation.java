@@ -16,8 +16,5 @@ public class L2TeleportLocation {
 		z = teleport.z;
 		price = teleport.price;
 	}
-
-	public static L2TeleportLocation of(XmlTeleport entry) {
-		return new L2TeleportLocation(entry);
-	}
+	
 }

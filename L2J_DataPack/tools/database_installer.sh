@@ -274,7 +274,6 @@ $MYG < ../sql/class_list.sql &> /dev/null
 $MYG < ../sql/droplist.sql &> /dev/null
 $MYG < ../sql/etcitem.sql &> /dev/null
 $MYG < ../sql/fish.sql &> /dev/null
-$MYG < ../sql/fishing_skill_trees.sql &> /dev/null
 $MYG < ../sql/fishreward.sql &> /dev/null
 $MYG < ../sql/forums.sql &> /dev/null
 $MYG < ../sql/games.sql &> /dev/null
@@ -308,7 +307,6 @@ $MYG < ../sql/seven_signs_status.sql &> /dev/null
 $MYG < ../sql/siege_clans.sql &> /dev/null
 $MYG < ../sql/skill_learn.sql &> /dev/null
 $MYG < ../sql/skill_spellbooks.sql &> /dev/null
-$MYG < ../sql/skill_trees.sql &> /dev/null
 $MYG < ../sql/spawnlist.sql &> /dev/null
 $MYG < ../sql/topic.sql &> /dev/null
 $MYG < ../sql/weapon.sql &> /dev/null
