@@ -19,10 +19,13 @@
 package net.sf.l2j.gameserver.model;
 
 import java.sql.PreparedStatement;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
+import la2.world.model.data.xml.XmlEntry;
+import la2.world.model.data.xml.XmlShop;
 import net.sf.l2j.L2DatabaseFactory;
 import net.sf.l2j.gameserver.ItemTable;
 import net.sf.l2j.gameserver.model.actor.instance.L2PcInstance;
@@ -46,6 +49,21 @@ public class L2TradeList
     
     private String _npcId;
 	
+    public L2TradeList(XmlEntry entry) {
+    	this((XmlShop) entry);
+    }
+    
+    public L2TradeList(XmlShop shop) {
+    	_items = new LinkedList<>();
+    	_listId = shop.shopId;
+    	_npcId = shop.npcId;
+    	shop.list.sort((l, r) -> Integer.compare(l.order, r.order));
+    	shop.list.forEach(item -> {
+    		L2ItemInstance dummy = ItemTable.getInstance().createDummyItem(item.itemId);
+    		dummy.setPriceToSell(item.price);
+    		addItem(dummy);
+    	});
+    }
 	public L2TradeList(int listId)
 	{
 		_items = new FastList<L2ItemInstance>();
