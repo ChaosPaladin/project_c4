@@ -33,7 +33,7 @@ public class L2PetDataTable
     		map(XmlEntry::asPetsStats).
     		map(L2PetData::new).
     		forEach(pet -> {
-    			if(petTable.containsKey(pet.getPetID()))
+    			if(!petTable.containsKey(pet.getPetID()))
     				petTable.put(pet.getPetID(), new TreeMap<>());
     			petTable.get(pet.getPetID()).put(pet.getPetLevel(), pet);
     			count[0]++;
