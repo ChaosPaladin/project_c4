@@ -265,12 +265,6 @@ public class GameServer
 
 		_npcTable = NpcTable.getInstance();
         
-		if (!_npcTable.isInitialized())
-		{
-		    _log.severe("Could not find the extraced files. Please Check Your Data.");
-		    throw new Exception("Could not initialize the npc table");
-		}
-        
 		_hennaTable = HennaTable.getInstance();
         
 		if (!_hennaTable.isInitialized())

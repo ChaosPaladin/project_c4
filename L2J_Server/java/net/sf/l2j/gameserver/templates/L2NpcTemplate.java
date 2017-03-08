@@ -23,6 +23,8 @@ import java.util.Map;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
+import la2.world.model.data.xml.XmlEntry;
+import la2.world.model.data.xml.XmlNpc;
 import net.sf.l2j.gameserver.model.L2DropData;
 import net.sf.l2j.gameserver.model.L2MinionData;
 import net.sf.l2j.gameserver.model.L2Skill;
@@ -68,7 +70,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	public final int     factionRange;
 	public final boolean isUndead;
     public final int     absorb_level;
-	
+	public final String jClass;
 	private final StatsSet npcStatsSet;
 
 	/** fixed skills*/
@@ -89,12 +91,74 @@ public final class L2NpcTemplate extends L2CharTemplate
 	private Map<Stats, Integer> _resists;
 	private Quest[]                   _questsStart;
 
+	//TODO rework 
+	public L2NpcTemplate(L2NpcTemplate entry, float baseHpMax) {
+		super((L2CharTemplate) entry, baseHpMax);
+		npcId = entry.npcId;
+		idTemplate = entry.idTemplate;
+		type = entry.type;
+		name = entry.name;
+		serverSideName = entry.serverSideName;
+		title = entry.title;
+		serverSideTitle = entry.serverSideTitle;
+		sex = entry.sex;
+		level = entry.level;
+		revardExp = entry.revardExp;
+		revardSp = entry.revardSp;
+		aggroRange = entry.aggroRange;
+		rhand = entry.rhand;
+		lhand = entry.lhand;
+		armor = entry.armor;
+		factionId = entry.factionId;
+		factionRange = entry.factionRange;
+		isUndead = entry.isUndead;
+		absorb_level = entry.absorb_level;
+		race = entry.race;
+		rateHp = entry.rateHp;
+		npcStatsSet = null;
+		_teachInfo = entry._teachInfo;
+		jClass = entry.jClass;
+	}
+	
+	public L2NpcTemplate(XmlEntry entry) {
+		this((XmlNpc) entry);
+	}
+	
+	public L2NpcTemplate(XmlNpc entry) {
+		super(entry);
+		npcId = entry.id;
+		idTemplate = entry.idTemplate;
+		type = entry.type;
+		name = entry.name;
+		serverSideName = entry.serverSideName;
+		title = entry.title;
+		serverSideTitle = entry.serverSideTitle;
+		sex = entry.sex;
+		level = entry.level;
+		revardExp = entry.exp;
+		revardSp = entry.sp;
+		aggroRange = entry.aggro;
+		rhand = entry.rhand;
+		lhand = entry.lhand;
+		armor = entry.armor;
+		factionId = entry.factionId;
+		factionRange = entry.factionRange;
+		isUndead = entry.isUndead;
+		absorb_level = entry.absorbLevel;
+		race = 0;
+		rateHp = 1;
+		npcStatsSet = null;
+		_teachInfo = null;
+		jClass = entry.javaClass;
+	}
+	
 	/**
 	 * Constructor of L2Character.<BR><BR>
 	 * 
 	 * @param set The StatsSet object to transfert data to the method
 	 * 
 	 */
+	@Deprecated
 	public L2NpcTemplate(StatsSet set)
 	{
 		super(set);
@@ -130,6 +194,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		rateHp = 1;
 		npcStatsSet = set;
 		_teachInfo = null;
+		jClass = null;
 	}
     
     public void addTeachInfo(ClassId classId)

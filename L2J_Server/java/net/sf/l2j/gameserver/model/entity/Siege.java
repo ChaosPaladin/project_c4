@@ -1105,11 +1105,8 @@ public class Siege
         L2ControlTowerInstance ct;
         for (int i = 0; i < _ControlTowerSpawnList.length; i++)
         {
-            StatsSet newStatSet = template.getStatsSet();
-            newStatSet.set("baseHpMax", _ControlTowerSpawnList[i][4]);
-
             ct = new L2ControlTowerInstance(IdFactory.getInstance().getNextId(),
-                                            new L2NpcTemplate(newStatSet));
+                                            new L2NpcTemplate(template, _ControlTowerSpawnList[i][4]));
             ct.setCurrentHpMp(ct.getMaxHp(), ct.getMaxMp());
             ct.spawnMe(_ControlTowerSpawnList[i][0], _ControlTowerSpawnList[i][1],
                        _ControlTowerSpawnList[i][2] + 20);

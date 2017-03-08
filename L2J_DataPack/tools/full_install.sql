@@ -42,7 +42,6 @@ DROP TABLE IF EXISTS merchant_buylists;
 DROP TABLE IF EXISTS merchant_lease;
 DROP TABLE IF EXISTS merchant_shopids;
 DROP TABLE IF EXISTS merchants;
-DROP TABLE IF EXISTS npc;
 DROP TABLE IF EXISTS olympiad_nobles;
 DROP TABLE IF EXISTS pets;
 DROP TABLE IF EXISTS posts;

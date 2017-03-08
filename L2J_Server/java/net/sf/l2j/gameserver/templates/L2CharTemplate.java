@@ -18,6 +18,8 @@
  */
 package net.sf.l2j.gameserver.templates;
 
+import la2.world.model.data.xml.XmlNpc;
+
 /**
  * This class ...
  * 
@@ -162,5 +164,141 @@ public class L2CharTemplate
 		// Geometry
 		collisionRadius    = set.getInteger("collision_radius");
 		collisionHeight    = set.getInteger("collision_height");
+	}
+
+	protected L2CharTemplate(final XmlNpc entry) {
+		// Base stats
+		baseSTR            = entry.STR;
+		baseCON            = entry.CON;
+		baseDEX            = entry.DEX;
+		baseINT            = entry.INT;
+		baseWIT            = entry.WIT;
+		baseMEN            = entry.MEN;
+		baseHpMax          = entry.hp; 
+    	baseCpMax          = 0;
+		baseMpMax          = entry.mp;
+		baseHpReg          = 1.5f + ((entry.level-1)/10);
+        baseCpReg          = 0;
+		baseMpReg          = 0.9f + 0.3f*((entry.level-1)/10);
+		basePAtk           = entry.patk;
+		baseMAtk           = entry.matk;
+		basePDef           = entry.pdef;
+		baseMDef           = entry.mdef;
+		basePAtkSpd        = entry.atkspd;
+		baseMAtkSpd        = entry.matkspd;
+		baseMReuseRate     = 1f;
+		baseShldDef        = 0;
+		baseAtkRange       = entry.attackrange;
+		baseShldRate       = 0;
+		baseCritRate       = 38;
+		baseAttackCancel   = 50; // 50% to break ATTACK
+		baseRunSpd         = entry.runspd;
+		// SpecialStats
+		baseBreath         = 100;
+		baseAggression     = 0;
+		baseBleed          = 0;
+		basePoison         = 0;
+		baseStun           = 0;
+		baseRoot           = 0;
+		baseMovement       = 0;
+		baseConfusion      = 0;
+		baseSleep          = 0;
+		baseFire           = 0;
+		baseWind           = 0;
+		baseWater          = 0;
+		baseEarth          = 0;
+		baseHoly           = 0;
+		baseDark           = 0;
+		baseAggressionRes  = 0;
+		baseBleedRes       = 0;
+		basePoisonRes      = 0;
+		baseStunRes        = 0;
+		baseRootRes        = 0;
+		baseMovementRes    = 0;
+		baseConfusionRes   = 0;
+		baseSleepRes       = 0;
+		baseFireRes        = 0;
+		baseWindRes        = 0;
+		baseWaterRes       = 0;
+		baseEarthRes       = 0;
+		baseHolyRes        = 0;
+		baseDarkRes        = 0;
+        
+        //C4 Stats
+        baseMpConsumeRate      = 0;
+        baseHpConsumeRate      = 0;
+		
+		// Geometry
+		collisionRadius    = entry.collisionRadius;
+		collisionHeight    = entry.collisionHeight;
+	}
+
+	
+	//TODO rework
+	public L2CharTemplate(L2CharTemplate entry, float baseHpMax) {
+		// Base stats
+		baseSTR            = entry.baseSTR;
+		baseCON            = entry.baseCON;
+		baseDEX            = entry.baseDEX;
+		baseINT            = entry.baseINT;
+		baseWIT            = entry.baseWIT;
+		baseMEN            = entry.baseMEN;
+		this.baseHpMax     = baseHpMax; 
+    	baseCpMax          = 0;
+		baseMpMax          = entry.baseMpMax;
+		baseHpReg          = entry.baseHpReg;
+        baseCpReg          = 0;
+		baseMpReg          = entry.baseMpReg;
+		basePAtk           = entry.basePAtk;
+		baseMAtk           = entry.baseMAtk;
+		basePDef           = entry.basePDef;
+		baseMDef           = entry.baseMDef;
+		basePAtkSpd        = entry.basePAtkSpd;
+		baseMAtkSpd        = entry.baseMAtkSpd;
+		baseMReuseRate     = 1f;
+		baseShldDef        = 0;
+		baseAtkRange       = entry.baseAtkRange;
+		baseShldRate       = 0;
+		baseCritRate       = 38;
+		baseAttackCancel   = 50; // 50% to break ATTACK
+		baseRunSpd         = entry.baseRunSpd;
+		// SpecialStats
+		baseBreath         = 100;
+		baseAggression     = 0;
+		baseBleed          = 0;
+		basePoison         = 0;
+		baseStun           = 0;
+		baseRoot           = 0;
+		baseMovement       = 0;
+		baseConfusion      = 0;
+		baseSleep          = 0;
+		baseFire           = 0;
+		baseWind           = 0;
+		baseWater          = 0;
+		baseEarth          = 0;
+		baseHoly           = 0;
+		baseDark           = 0;
+		baseAggressionRes  = 0;
+		baseBleedRes       = 0;
+		basePoisonRes      = 0;
+		baseStunRes        = 0;
+		baseRootRes        = 0;
+		baseMovementRes    = 0;
+		baseConfusionRes   = 0;
+		baseSleepRes       = 0;
+		baseFireRes        = 0;
+		baseWindRes        = 0;
+		baseWaterRes       = 0;
+		baseEarthRes       = 0;
+		baseHolyRes        = 0;
+		baseDarkRes        = 0;
+        
+        //C4 Stats
+        baseMpConsumeRate      = 0;
+        baseHpConsumeRate      = 0;
+		
+		// Geometry
+		collisionRadius    = entry.collisionRadius;
+		collisionHeight    = entry.collisionHeight;	
 	}
 }
