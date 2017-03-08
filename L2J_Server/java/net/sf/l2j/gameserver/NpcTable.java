@@ -22,7 +22,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.TreeMap;
 import java.util.logging.Logger;
 
@@ -32,6 +31,7 @@ import la2.world.model.creature.PlayerClass;
 import la2.world.model.data.xml.XmlDropItem;
 import la2.world.model.data.xml.XmlEntry;
 import la2.world.model.data.xml.XmlLoader;
+import la2.world.model.data.xml.XmlMinion;
 import la2.world.model.data.xml.XmlNpcSkill;
 import net.sf.l2j.Config;
 import net.sf.l2j.L2DatabaseFactory;
@@ -71,6 +71,7 @@ public class NpcTable
 		restoreNpcData();
 	}
 
+	//helper method
 	private void addSkill(final XmlNpcSkill skill) {
 		final L2NpcTemplate npc = _npcs.get(skill.npcid);
 		if(npc != null) {
@@ -141,6 +142,7 @@ public class NpcTable
 			_log.warning("Npc skill: not found npc with id " + skill.npcid);		
 	}
 	
+	//helper method
 	private void addDrop(XmlDropItem entry) {
 		L2NpcTemplate npc = _npcs.get(entry.mobId);
         if (npc == null) {
@@ -173,6 +175,19 @@ public class NpcTable
         }		
 	}
 	
+	//helper methods
+	public void addMinion(final XmlMinion entry) {
+	    final L2NpcTemplate npc = _npcs.get(entry.bossId);
+	    if(npc != null) {
+	    	final L2MinionData minion = new L2MinionData();
+	    	minion.setMinionId(entry.minionId);
+	    	minion.setAmountMin(entry.amountMin);
+	    	minion.setAmountMax(entry.amountMax);
+			npc.addRaidData(minion);
+	    } else
+	    	_log.warning("Npc table: not found raidboss " + entry.bossId + " for minion " + entry.minionId);
+		
+	}
 	private void restoreNpcData()
 	{
 		java.sql.Connection con = null;
@@ -214,33 +229,11 @@ public class NpcTable
 						_log.warning("NPCTable: Error getting NPC template ID " + entry.npcId + " while trying to load skill trainer data.");
 				});
             
-			try 
-            {
-				PreparedStatement statement4 = con.prepareStatement("SELECT " + L2DatabaseFactory.getInstance().safetyString(new String[] {"boss_id", "minion_id", "amount_min", "amount_max"}) + " FROM minions");
-				ResultSet minionData = statement4.executeQuery();
-				L2MinionData minionDat = null;
-				L2NpcTemplate npcDat = null;
-				int cnt = 0;
-				
-				while (minionData.next())
-				{
-					int raidId = minionData.getInt("boss_id");
-				    npcDat = _npcs.get(raidId);
-					minionDat = new L2MinionData();					
-					minionDat.setMinionId(minionData.getInt("minion_id"));
-					minionDat.setAmountMin(minionData.getInt("amount_min"));
-					minionDat.setAmountMax(minionData.getInt("amount_max"));
-					npcDat.addRaidData(minionDat);
-					cnt++;
-				}
-
-				minionData.close();
-				statement4.close();
-				_log.config("NpcTable: Loaded " + cnt + " Minions.");
-            } 
-			catch (Exception e) {
-			    _log.severe("Error loading minion data: " + e);
-			}				 
+			XmlLoader.load("minions.xml").list.stream().
+				filter(XmlMinion.class::isInstance).
+				map(XmlMinion.class::cast).
+				forEach(this::addMinion);
+			//TODO _log.config("NpcTable: Loaded " + count + " Minions.");			 
 		} 
         finally {
 		    try { con.close(); } catch (Exception e) {}

@@ -270,7 +270,6 @@ $MYG < ../sql/characters.sql &> /dev/null
 $MYG < ../sql/clan_data.sql &> /dev/null
 $MYG < ../sql/clan_wars.sql &> /dev/null
 $MYG < ../sql/clanhall.sql &> /dev/null
-$MYG < ../sql/class_list.sql &> /dev/null
 $MYG < ../sql/etcitem.sql &> /dev/null
 $MYG < ../sql/fish.sql &> /dev/null
 $MYG < ../sql/fishreward.sql &> /dev/null
@@ -290,7 +289,6 @@ $MYG < ../sql/merchant_buylists.sql &> /dev/null
 $MYG < ../sql/merchant_lease.sql &> /dev/null
 $MYG < ../sql/merchant_shopids.sql &> /dev/null
 $MYG < ../sql/merchants.sql &> /dev/null
-$MYG < ../sql/minions.sql &> /dev/null
 $MYG < ../sql/npc.sql &> /dev/null
 $MYG < ../sql/olympiad_nobles.sql&> /dev/null
 $MYG < ../sql/pets.sql &> /dev/null

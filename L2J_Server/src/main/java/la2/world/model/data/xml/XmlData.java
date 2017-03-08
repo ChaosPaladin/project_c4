@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "data")
 public class XmlData {
 	@XmlElements({
+		@XmlElement(name = "minion", type = XmlMinion.class),
 		@XmlElement(name = "drop-item", type = XmlDropItem.class),
 		@XmlElement(name = "npc-skill", type = XmlNpcSkill.class),
 		@XmlElement(name = "pets-stats", type = XmlPetsStats.class),
