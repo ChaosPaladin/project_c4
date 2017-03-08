@@ -18,6 +18,8 @@
  */
 package net.sf.l2j.gameserver.model;
 
+import la2.world.model.data.xml.XmlPetsStats;
+
 public class L2PetData
 {
     public static final String PET_TYPE = "typeID";
@@ -73,6 +75,31 @@ public class L2PetData
     private int petRegenHP;
     private int petRegenMP;
 
+    public L2PetData() {}
+    
+    public L2PetData(XmlPetsStats entry) {
+    	petID = entry.typeID;
+    	petLevel = entry.level;
+    	petMaxExp = entry.expMax;
+    	petMaxHP = entry.hpMax;
+    	petMaxMP = entry.mpMax;
+    	petPAtk = entry.patk;
+    	petPDef = entry.pdef;
+    	petMDef = entry.mdef;
+    	petAccuracy = entry.acc;
+    	petEvasion = entry.evasion;
+		petCritical = entry.crit;
+		petSpeed = entry.speed;
+		petAtkSpeed = entry.atkSpeed;
+		petCastSpeed = entry.castSpeed;
+		petMaxFeed = entry.feedMax;
+		petFeedNormal = entry.feednormal;
+		petFeedBattle = entry.feedbattle;
+		petMaxLoad = entry.loadMax;
+		petRegenHP = entry.hpregen;
+		petRegenMP = entry.mpregen;
+    }
+    
     public void setStat(String stat, int value)
     {
         //      if (stat.equalsIgnoreCase(PET_EXP)) { this.setPetExp(value); } 

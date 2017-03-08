@@ -49,7 +49,6 @@ DROP TABLE IF EXISTS npc;
 DROP TABLE IF EXISTS npcskills;
 DROP TABLE IF EXISTS olympiad_nobles;
 DROP TABLE IF EXISTS pets;
-DROP TABLE IF EXISTS pets_stats;
 DROP TABLE IF EXISTS posts;
 DROP TABLE IF EXISTS raidboss_spawnlist;
 DROP TABLE IF EXISTS seven_signs;

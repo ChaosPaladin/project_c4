@@ -10,6 +10,14 @@ public class XmlEntry {
 		return (XmlFishingSkillLearn) this;
 	}
 
+	public final boolean isPetsStats() {
+		return this instanceof XmlPetsStats;
+	}
+	
+	public final XmlPetsStats asPetsStats() {
+		return (XmlPetsStats) this;
+	}
+	
 	public final boolean isRandomSpawn() {
 		return this instanceof XmlRandomSpawn;
 	}

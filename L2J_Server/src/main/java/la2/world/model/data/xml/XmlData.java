@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "data")
 public class XmlData {
 	@XmlElements({
+		@XmlElement(name = "pets-stats", type = XmlPetsStats.class),
 		@XmlElement(name = "random-spawn", type = XmlRandomSpawn.class),
 		@XmlElement(name = "random-spawn-loc", type = XmlRandomSpawnLoc.class),
 		@XmlElement(name = "fishingskilllearn", type = XmlFishingSkillLearn.class),
