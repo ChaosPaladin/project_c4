@@ -23,13 +23,16 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.TreeMap;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
 import la2.world.model.creature.PlayerClass;
+import la2.world.model.data.xml.XmlDropItem;
 import la2.world.model.data.xml.XmlEntry;
 import la2.world.model.data.xml.XmlLoader;
+import la2.world.model.data.xml.XmlNpcSkill;
 import net.sf.l2j.Config;
 import net.sf.l2j.L2DatabaseFactory;
 import net.sf.l2j.gameserver.model.L2DropData;
@@ -62,13 +65,114 @@ public class NpcTable
 		return _instance;
 	}
 
-	private NpcTable()
-	{
-		_npcs = new FastMap<Integer, L2NpcTemplate>();
+	private NpcTable() {
+		_npcs = new TreeMap<Integer, L2NpcTemplate>();
         
 		restoreNpcData();
 	}
 
+	private void addSkill(final XmlNpcSkill skill) {
+		final L2NpcTemplate npc = _npcs.get(skill.npcid);
+		if(npc != null) {
+		    if (npc.race == 0) {
+		        if (skill.skillid >= 4290 && skill.skillid <= 4302) {
+		        	npc.setRace(skill.skillid);
+		            return;
+		        }
+            }
+		    if(npc.rateHp == 1) {
+		    	if(skill.skillid >= 4303 && skill.skillid <= 4310) {
+		    		if(!Config.ENABLE_RATE_HP)
+		    			return;
+		    		npc.setRateHp(skill.skillid - 4301);
+		    		return;
+		    	} else if(skill.skillid == 4311) {
+		    		if(!Config.ENABLE_RATE_HP)
+		    			return;
+		    		npc.setRateHp(0.5);
+		    		return;
+		    	}
+		    }
+		    switch(skill.skillid) {
+			    case 4084: {
+			    	int resistPAtk = npc.getResist(Stats.POWER_DEFENCE) - 20;
+			    	if(resistPAtk < 0)
+			    		resistPAtk = 0;
+			    	npc.removeResist(Stats.POWER_DEFENCE);
+			    	npc.addResist(Stats.POWER_DEFENCE, resistPAtk);
+			    	break;
+			    }
+			    case 4272:
+			    case 4276: {
+	                int resistBow = npc.getResist(Stats.BOW_WPN_RES);
+	                if (skill.skillid == 4272)
+	                    resistBow -= 70;
+	                else if (skill.skillid == 4276)
+	                    resistBow += 20;
+	                if (resistBow < 0) 
+	                    resistBow = 0;
+	                npc.removeResist(Stats.BOW_WPN_RES);
+	                npc.addResist(Stats.BOW_WPN_RES, resistBow);
+	                break;
+			    }
+			    case 4273: {
+	                int resistDagger = npc.getResist(Stats.DAGGER_WPN_RES) - 80;
+	                if (resistDagger < 0) 
+	                    resistDagger = 0;
+	                npc.removeResist(Stats.DAGGER_WPN_RES);
+	                npc.addResist(Stats.DAGGER_WPN_RES, resistDagger);
+	                break;
+			    }
+			    case 4274: {
+	                int resistBlunt = npc.getResist(Stats.BLUNT_WPN_RES) + 20;
+	                if(resistBlunt < 0) 
+	                    resistBlunt = 0;
+	                npc.removeResist(Stats.BLUNT_WPN_RES);
+	                npc.addResist(Stats.BLUNT_WPN_RES, resistBlunt);
+			    	break;
+			    }
+		    }  
+			final L2Skill sInfo = SkillTable.getInstance().getInfo(skill.skillid, skill.level);
+			if (sInfo != null) {
+				npc.addSkill(sInfo);
+			} else
+				;//_log.warning("Npc skill: not found skill with id " + skill.skillid + " level " + skill.level);
+		} else
+			_log.warning("Npc skill: not found npc with id " + skill.npcid);		
+	}
+	
+	private void addDrop(XmlDropItem entry) {
+		L2NpcTemplate npc = _npcs.get(entry.mobId);
+        if (npc == null) {
+            _log.severe("NPCTable: No npc correlating with id : " + entry.mobId);
+            return;
+        }
+        final L2DropData drop = new L2DropData();
+        drop.setItemId(entry.itemId);
+        drop.setMinDrop(entry.min);
+        drop.setMaxDrop(entry.max);
+        drop.setSweep(entry.sweep);
+        drop.setChance(entry.chance);
+        
+        // uncategorized drops: marked as uncategorized, or are sweep, or this is a raidboss
+        // uncategorized allows many drops to be given from the same list
+        // the following mobs are grandbosses.  Grandbosses are L2Monster but should be treated like RBs.
+        // 12001    Queen Ant
+        // 12169    Orfen
+        // 12211    Antharas
+        // 12372    Baium
+        // 12374    Zaken
+        // 12899    Valakas                
+        if ((entry.category == 0)  || (drop.isSweep()) || (npc.type.compareToIgnoreCase("L2RaidBoss") == 0) || (npc.type.compareToIgnoreCase("L2Boss") == 0)) {
+        	npc.addDropData(drop);
+        } else {//  categorized as full drops and parts for armor/weapon/jewel
+            if (entry.category == 1)
+            	npc.addFullDropData(drop);
+            else             // other items (miscellaneous like scrolls, potions, mats, etc).
+            	npc.addMiscDropData(drop);
+        }		
+	}
+	
 	private void restoreNpcData()
 	{
 		java.sql.Connection con = null;
@@ -89,176 +193,15 @@ public class NpcTable
             catch (Exception e) {
                 _log.severe("NPCTable: Error creating NPC table: " + e);
             }
+			XmlLoader.load("npcskills.xml").list.stream().
+				filter(XmlEntry::isNpcSkill).
+				map(XmlEntry::asNpcSkill).
+				forEach(this::addSkill);
 			
-			try 
-            {
-				con = L2DatabaseFactory.getInstance().getConnection();
-				PreparedStatement statement = con.prepareStatement("SELECT npcid, skillid, level FROM npcskills");
-				ResultSet npcskills = statement.executeQuery();
-				L2NpcTemplate npcDat = null;
-				L2Skill npcSkill = null;
-	
-				while (npcskills.next())
-				{
-				    int mobId = npcskills.getInt("npcid");
-				    npcDat = _npcs.get(mobId);
-                    
-					if (npcDat == null)
-						continue;
-                    
-				    int skillId = npcskills.getInt("skillid");
-				    int level = npcskills.getInt("level");
-				    
-				    if (npcDat.race == 0)
-                    {
-				        if (skillId >= 4290 && skillId <= 4302)
-				        {
-				            npcDat.setRace(skillId);
-				            continue;
-				        }
-                    }
-				    
-				    if (npcDat.rateHp == 1)
-				    {
-				        if (skillId >= 4303 && skillId <= 4310)
-				        {
-				            if (!Config.ENABLE_RATE_HP)
-				                continue;
-				            
-				            npcDat.setRateHp(skillId - 4301);
-				            continue;
-				        }
-				        else if (skillId == 4311)
-				        {
-				            if (!Config.ENABLE_RATE_HP)
-				                continue;
-				            
-				            npcDat.setRateHp(0.5);
-				            continue;
-				        }
-				    }
-				
-					switch (skillId)
-					{
-					    case 4084:
-					        int resistPAtk = npcDat.getResist(Stats.POWER_DEFENCE) - 20;
-					        
-					        if (resistPAtk < 0) 
-					            resistPAtk = 0;
-					        
-					        npcDat.removeResist(Stats.POWER_DEFENCE);
-					        npcDat.addResist(Stats.POWER_DEFENCE, resistPAtk);
-					        break;
-                        case 4272:
-                        case 4276:
-                            int resistBow = npcDat.getResist(Stats.BOW_WPN_RES);
-                                
-                            if (skillId == 4272)
-                                resistBow -= 70;
-                            else if (skillId == 4276)
-                                resistBow += 20;
-                            
-                            if (resistBow < 0) 
-                                resistBow = 0;
-                            
-                            npcDat.removeResist(Stats.BOW_WPN_RES);
-                            npcDat.addResist(Stats.BOW_WPN_RES, resistBow);
-                            break;
-                        case 4273:
-                            int resistDagger = npcDat.getResist(Stats.DAGGER_WPN_RES) - 80;
-					    
-                            if (resistDagger < 0) 
-                                resistDagger = 0;
-                            
-                            npcDat.removeResist(Stats.DAGGER_WPN_RES);
-                            npcDat.addResist(Stats.DAGGER_WPN_RES, resistDagger);
-                            break;
-                        case 4274:
-                            int resistBlunt = npcDat.getResist(Stats.BLUNT_WPN_RES) + 20;
-
-                            if (resistBlunt < 0) 
-                                resistBlunt = 0;
-                            
-                            npcDat.removeResist(Stats.BLUNT_WPN_RES);
-                            npcDat.addResist(Stats.BLUNT_WPN_RES, resistBlunt);
-                            break;
-                    }
-                            
-					npcSkill = SkillTable.getInstance().getInfo(skillId, level);
-                    
-					if (npcSkill == null)
-						continue;
-                    
-					npcDat.addSkill(npcSkill);
-				}
-                
-				npcskills.close();
-				statement.close();
-			} 
-            catch (Exception e) {
-				_log.severe("NPCTable: Error reading NPC skills table: " + e);
-			}
-			
-			try 
-            {
-			    PreparedStatement statement2 = con.prepareStatement("SELECT " + L2DatabaseFactory.getInstance().safetyString(new String[] {"mobId", "itemId", "min", "max", "sweep", "chance"}) + ", IFNULL(drop_category,1) AS drop_category FROM droplist LEFT JOIN etcitem ON itemId = item_id ORDER BY mobId, chance DESC");
-			    ResultSet dropData = statement2.executeQuery();
-			    L2DropData dropDat = null;
-			    L2NpcTemplate npcDat = null;
-			    
-			    while (dropData.next())
-			    {
-			        int mobId = dropData.getInt("mobId");
-			        npcDat = _npcs.get(mobId);
-                    if (npcDat == null)
-                    {
-                        _log.severe("NPCTable: No npc correlating with id : " + mobId);
-                        continue;
-                    }
-			        dropDat = new L2DropData();
-			        
-			        dropDat.setItemId(dropData.getInt("itemId"));
-			        dropDat.setMinDrop(dropData.getInt("min"));
-			        dropDat.setMaxDrop(dropData.getInt("max"));
-			        dropDat.setSweep(dropData.getInt("sweep") == 1);
-			        dropDat.setChance(dropData.getInt("chance"));
-                    
-			        int category = dropData.getInt("drop_category");
-			        
-			        // uncategorized drops: marked as uncategorized, or are sweep, or this is a raidboss
-			        // uncategorized allows many drops to be given from the same list
-			        // the following mobs are grandbosses.  Grandbosses are L2Monster but should be treated like RBs.
-			        // 12001    Queen Ant
-			        // 12169    Orfen
-			        // 12211    Antharas
-			        // 12372    Baium
-			        // 12374    Zaken
-			        // 12899    Valakas                
-			        if ((category == 0) 
-                        || (dropDat.isSweep()) 
-                        || (npcDat.type.compareToIgnoreCase("L2RaidBoss") == 0) 
-                        || (npcDat.type.compareToIgnoreCase("L2Boss") == 0) 
-			           )
-                    {
-			            npcDat.addDropData(dropDat);
-                    }
-			        //  categorized as full drops and parts for armor/weapon/jewel
-			        else
-			        {
-			            if (category == 1)
-			                npcDat.addFullDropData(dropDat);
-			            // other items (miscellaneous like scrolls, potions, mats, etc).
-			            else 
-			                npcDat.addMiscDropData(dropDat);
-			        }
-			    }
-
-    			dropData.close();
-    			statement2.close();
-			} 
-            catch (Exception e) {
-				_log.severe("NPCTable: Error reading NPC drop data: " + e);
-			}
+			XmlLoader.load("droplist.xml").list.stream().
+				filter(XmlDropItem.class::isInstance).
+				map(XmlDropItem.class::cast).
+				forEach(this::addDrop);
 
 			XmlLoader.load("npc-skill-learn.xml").list.stream().
 				filter(XmlEntry::isNpcSkillLearn).
@@ -456,6 +399,8 @@ public class NpcTable
         restoreNpcData();
     }
     
+    
+    @Deprecated
     public void saveNpc(StatsSet npc)
     {
         java.sql.Connection con = null;

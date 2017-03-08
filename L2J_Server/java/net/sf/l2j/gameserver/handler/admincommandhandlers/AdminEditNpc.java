@@ -51,6 +51,7 @@ import net.sf.l2j.gameserver.templates.StatsSet;
  *
  * Window - Preferences - Java - Code Style - Code Templates
  */
+@Deprecated
 public class AdminEditNpc implements IAdminCommandHandler {
     private static Logger _log = Logger.getLogger(AdminEditChar.class.getName());
     private final static int PAGE_LIMIT = 7;
@@ -804,9 +805,9 @@ public class AdminEditNpc implements IAdminCommandHandler {
 //	    NpcTable.getInstance().replaceTemplate(template);
 	    
 	    //save the npc data
-        NpcTable.getInstance().saveNpc(npcData);
+       // NpcTable.getInstance().saveNpc(npcData);
         // and reload
-        NpcTable.getInstance().reloadNpc(npcData.getInteger("npcId"));
+        //NpcTable.getInstance().reloadNpc(npcData.getInteger("npcId"));
 	}
 
 	private void showNpcDropList(L2PcInstance admin, int npcId)

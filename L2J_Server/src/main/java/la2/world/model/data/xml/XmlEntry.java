@@ -1,7 +1,15 @@
 package la2.world.model.data.xml;
 
-public class XmlEntry {
-
+public abstract class XmlEntry {
+	
+	public final boolean isNpcSkill() {
+		return this instanceof XmlNpcSkill;
+	}
+	
+	public final XmlNpcSkill asNpcSkill() {
+		return (XmlNpcSkill) this;
+	}
+	
 	public final boolean isFishingSkillLearn() {
 		return this instanceof XmlFishingSkillLearn;
 	}
