@@ -55,7 +55,7 @@ public class L2HennaInstance
 		_statINT = _template.stat_INT;
 		_statSTR = _template.stat_STR;
 		_statCON = _template.stat_CON;
-		_statMEM = _template.stat_MEM;
+		_statMEM = _template.stat_MEN;
 		_statDEX = _template.stat_DEX;
 		_statWIT = _template.stat_WIT;
 	}
@@ -90,30 +90,14 @@ public class L2HennaInstance
         return _symbolId;
     }
 	
-	public void setSymbolId(int SymbolId)
-	{
-		_symbolId = SymbolId;
-	}
-	
 	public int getItemIdDye()
     {
         return _itemIdDye;
     }
 	
-	public void setItemIdDye(int ItemIdDye)
-	{
-		_itemIdDye = ItemIdDye;
-	}
-	
-	
 	public int getAmountDyeRequire()
 	{
 		return _amountDyeRequire;
-	}
-	
-	public void setAmountDyeRequire(int AmountDyeRequire)
-	{
-		_amountDyeRequire = AmountDyeRequire;
 	}
 	
 	public int getPrice()
@@ -121,20 +105,10 @@ public class L2HennaInstance
 		return _price;
 	}
 	
-	public void setPrice(int Price)
-	{
-		_price = Price;
-	}
-	
 	
 	public int getStatINT()
 	{
 		return _statINT;
-	}
-	
-	public void setStatINT(int StatINT)
-	{
-		_statINT = StatINT;
 	}
 
 	public int getStatSTR()
@@ -142,19 +116,9 @@ public class L2HennaInstance
 		return _statSTR;
 	}
 	
-	public void setStatSTR(int StatSTR)
-	{
-		_statSTR = StatSTR;
-	}
-	
 	public int getStatCON()
 	{
 		return _statCON;
-	}
-	
-	public void setStatCON(int StatCON)
-	{
-		_statCON = StatCON;
 	}
 	
 	public int getStatMEM()
@@ -162,30 +126,14 @@ public class L2HennaInstance
 		return _statMEM;
 	}
 	
-	public void setStatMEM(int StatMEM)
-	{
-		_statMEM = StatMEM;
-	}
-	
 	public int getStatDEX()
 	{
 		return _statDEX;
-	}
-	
-	public void setStatDEX(int StatDEX)
-	{
-		_statDEX = StatDEX;
 	}
 	
 	public int getStatWIT()
 	{
 		return _statWIT;
 	}
-	
-	public void setStatWIT(int StatWIT)
-	{
-		_statWIT = StatWIT;
-	}
-	
 		
 }

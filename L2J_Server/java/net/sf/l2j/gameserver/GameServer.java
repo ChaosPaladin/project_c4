@@ -267,17 +267,7 @@ public class GameServer
         
 		_hennaTable = HennaTable.getInstance();
         
-		if (!_hennaTable.isInitialized())
-		{
-		   throw new Exception("Could not initialize the Henna Table");
-		}
-        
 		HennaTreeTable.getInstance();
-        
-		if (!_hennaTable.isInitialized())
-		{
-		   throw new Exception("Could not initialize the Henna Tree Table");
-		}
         
         _helperBuffTable = HelperBuffTable.getInstance();
         
