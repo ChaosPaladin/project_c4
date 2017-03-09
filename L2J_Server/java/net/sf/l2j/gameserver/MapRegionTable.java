@@ -1,31 +1,11 @@
-/*
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- * 02111-1307, USA.
- *
- * http://www.gnu.org/copyleft/gpl.html
- */
 package net.sf.l2j.gameserver;
 
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.List;
 import java.util.logging.Logger;
 
+import la2.world.model.data.xml.XmlLoader;
+import la2.world.model.data.xml.XmlMapRegion;
 import net.sf.l2j.Config;
-import net.sf.l2j.L2DatabaseFactory;
 import net.sf.l2j.gameserver.instancemanager.ArenaManager;
 import net.sf.l2j.gameserver.instancemanager.CastleManager;
 import net.sf.l2j.gameserver.instancemanager.ClanHallManager;
@@ -42,14 +22,8 @@ import net.sf.l2j.gameserver.model.entity.ClanHall;
 import net.sf.l2j.gameserver.model.entity.Zone;
 import net.sf.l2j.gameserver.model.entity.ZoneType;
 
-/**
- * This class ...
- */
-public class MapRegionTable
-{
+public class MapRegionTable {
 	private static Logger _log = Logger.getLogger(MapRegionTable.class.getName());
-	
-	private static MapRegionTable _instance;
 	
 	private final int[][] _regions = new int[19][21];
 
@@ -63,52 +37,20 @@ public class MapRegionTable
         Town
     }
 	
-	public static MapRegionTable getInstance()
-	{
-		if (_instance == null)
-		{
-			_instance = new MapRegionTable();
-		}
-		return _instance;
+	public static MapRegionTable getInstance() {
+		return SingletonHolder.instance;
 	}
 	
-	private MapRegionTable()
-	{
-		int count2 = 0;
-		
-		//LineNumberReader lnr = null;
-		java.sql.Connection con = null;
-		try
-		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT region, sec0, sec1, sec2, sec3, sec4, sec5, sec6, sec7, sec8, sec9 FROM mapregion");
-			ResultSet rset = statement.executeQuery();
-			int region;
-			while (rset.next())
-			{
-				region = rset.getInt(1);
-				
-				for (int j=0; j<10; j++)
-				{
-					_regions[j][region] = rset.getInt(j+2);
-					count2++;
-					//_log.fine(j+","+region+" -> "+rset.getInt(j+2));
-				}
+	private MapRegionTable() {
+		int count[] = {0};
+		XmlLoader.load("mapregion.xml").list.stream().map(XmlMapRegion.class::cast).forEach(item -> {
+			for(int i = 0 ; i < 10 ; i++) {
+				_regions[i][item.region] = item.seg[i];
+				count[0]++;
 			}
-			
-			rset.close();
-			statement.close();
-			if (Config.DEBUG) _log.fine(count2 +" mapregion loaded");
-		}
-		catch (Exception e)
-		{
-			_log.warning("error while creating map region data: "+e);
-		} 
-		finally 
-		{
-			try { con.close(); } catch (Exception e) {}
-		}
-        
+		});
+		if (Config.DEBUG) 
+			_log.fine(count[0] +" mapregion loaded");
         _pointsWithKarmas = new int[14][3];
         //Talking Island
         _pointsWithKarmas[0][0] = -79077;
@@ -321,5 +263,9 @@ public class MapRegionTable
         }
         
         return new Location(coord[0], coord[1], coord[4]);
+    }
+    
+    private static final class SingletonHolder {
+    	private static final MapRegionTable instance = new MapRegionTable();
     }
 }

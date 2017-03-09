@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "data")
 public class XmlData {
 	@XmlElements({
+		@XmlElement(name = "mapregion", type = XmlMapRegion.class),
 		@XmlElement(name = "henna-tree", type = XmlHennaTree.class),
 		@XmlElement(name = "henna", type = XmlHenna.class),
 		@XmlElement(name = "shop", type = XmlShop.class),

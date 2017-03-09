@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data>
+    <mapregion region="0" seg="3 3 3 3 3 4 4 4 4 4"/>
+    <mapregion region="1" seg="3 3 3 3 3 4 4 4 4 4"/>
+    <mapregion region="2" seg="3 3 3 3 3 4 4 4 4 4"/>
+    <mapregion region="3" seg="3 3 3 3 3 4 4 4 4 4"/>
+    <mapregion region="4" seg="3 3 3 3 3 4 4 4 4 4"/>
+    <mapregion region="5" seg="3 3 3 3 3 14 14 15 15 15"/>
+    <mapregion region="6" seg="3 3 3 3 3 14 14 15 15 15"/>
+    <mapregion region="7" seg="3 3 3 3 14 14 14 15 15 15"/>
+    <mapregion region="8" seg="3 3 3 3 14 14 14 15 15 15"/>
+    <mapregion region="9" seg="2 2 2 2 2 2 9 9 10 10"/>
+    <mapregion region="10" seg="2 2 2 2 2 9 9 10 10 10"/>
+    <mapregion region="11" seg="2 2 2 2 1 1 9 11 10 10"/>
+    <mapregion region="12" seg="6 6 2 5 1 1 9 11 11 11"/>
+    <mapregion region="13" seg="6 6 5 5 7 7 8 8 8 8"/>
+    <mapregion region="14" seg="6 6 6 5 7 7 8 8 8 8"/>
+    <mapregion region="15" seg="0 6 6 5 7 12 8 8 13 13"/>
+    <mapregion region="16" seg="0 0 6 6 12 12 13 13 13 13"/>
+    <mapregion region="17" seg="0 0 0 0 0 0 13 13 13 13"/>
+</data>

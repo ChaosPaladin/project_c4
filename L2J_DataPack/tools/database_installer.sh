@@ -281,7 +281,6 @@ $MYG < ../sql/heroes.sql &> /dev/null
 $MYG < ../sql/items.sql &> /dev/null
 $MYG < ../sql/locations.sql &> /dev/null
 $MYG < ../sql/lvlupgain.sql &> /dev/null
-$MYG < ../sql/mapregion.sql &> /dev/null
 $MYG < ../sql/olympiad_nobles.sql&> /dev/null
 $MYG < ../sql/pets.sql &> /dev/null
 $MYG < ../sql/posts.sql &> /dev/null
