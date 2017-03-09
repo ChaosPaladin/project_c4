@@ -6,7 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
-public class XmlTerritory {
+public class XmlTerritory extends XmlEntry {
 	@XmlAttribute public int id;
 	@XmlElement public List<XmlPoint> points = new LinkedList<>();
 	
