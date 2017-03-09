@@ -278,7 +278,6 @@ public class GameServer
         
 
 		TeleportLocationTable.getInstance();
-		LevelUpData.getInstance();
 		L2World.getInstance();
         SpawnTable.getInstance();
         RaidBossSpawnManager.getInstance();

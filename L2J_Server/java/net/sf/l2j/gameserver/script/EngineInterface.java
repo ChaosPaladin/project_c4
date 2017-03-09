@@ -24,7 +24,6 @@ import net.sf.l2j.gameserver.CharTemplateTable;
 import net.sf.l2j.gameserver.ClanTable;
 import net.sf.l2j.gameserver.GameTimeController;
 import net.sf.l2j.gameserver.ItemTable;
-import net.sf.l2j.gameserver.LevelUpData;
 import net.sf.l2j.gameserver.MapRegionTable;
 import net.sf.l2j.gameserver.NpcTable;
 import net.sf.l2j.gameserver.RecipeController;
@@ -60,7 +59,6 @@ public interface EngineInterface
     public NpcTable _npcTable = NpcTable.getInstance();
     
     public TeleportLocationTable _teleTable = TeleportLocationTable.getInstance();
-    public LevelUpData _levelUpData = LevelUpData.getInstance();
     public L2World _world = L2World.getInstance();   
     public SpawnTable _spawnTable = SpawnTable.getInstance();
     public GameTimeController _gameTimeController = GameTimeController.getInstance();
