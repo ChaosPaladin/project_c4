@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data>
+    <helper-buff id="0" skillId="4322" name="WindWalk" skillLevel="1" lowerLevel="8" upperLevel="25" isMagicClass="false"/>
+    <helper-buff id="1" skillId="4323" name="Shield" skillLevel="1" lowerLevel="11" upperLevel="24" isMagicClass="false"/>
+    <helper-buff id="2" skillId="4338" name="Life Cubic" skillLevel="1" lowerLevel="16" upperLevel="19" isMagicClass="false"/>
+    <helper-buff id="3" skillId="4324" name="Bless the Body" skillLevel="1" lowerLevel="12" upperLevel="23" isMagicClass="false"/>
+    <helper-buff id="4" skillId="4325" name="Vampiric Rage" skillLevel="1" lowerLevel="13" upperLevel="22" isMagicClass="false"/>
+    <helper-buff id="5" skillId="4326" name="Regeneration" skillLevel="1" lowerLevel="14" upperLevel="21" isMagicClass="false"/>
+    <helper-buff id="6" skillId="4327" name="Haste" skillLevel="1" lowerLevel="15" upperLevel="20" isMagicClass="false"/>
+    <helper-buff id="7" skillId="4322" name="WindWalk" skillLevel="1" lowerLevel="8" upperLevel="25" isMagicClass="true"/>
+    <helper-buff id="8" skillId="4323" name="Shield" skillLevel="1" lowerLevel="11" upperLevel="24" isMagicClass="true"/>
+    <helper-buff id="9" skillId="4338" name="Life Cubic" skillLevel="1" lowerLevel="16" upperLevel="19" isMagicClass="true"/>
+    <helper-buff id="10" skillId="4328" name="Bless the Soul" skillLevel="1" lowerLevel="12" upperLevel="23" isMagicClass="true"/>
+    <helper-buff id="11" skillId="4329" name="Acumen" skillLevel="1" lowerLevel="13" upperLevel="22" isMagicClass="true"/>
+    <helper-buff id="12" skillId="4330" name="Concentration" skillLevel="1" lowerLevel="14" upperLevel="21" isMagicClass="true"/>
+    <helper-buff id="13" skillId="4331" name="Empower" skillLevel="1" lowerLevel="15" upperLevel="20" isMagicClass="true"/>
+</data>

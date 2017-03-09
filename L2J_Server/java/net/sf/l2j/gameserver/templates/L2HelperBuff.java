@@ -1,5 +1,8 @@
 package net.sf.l2j.gameserver.templates;
 
+import la2.world.model.data.xml.XmlEntry;
+import la2.world.model.data.xml.XmlHelperBuff;
+
 /**
  * This class represents a Newbie Helper Buff
  *
@@ -24,25 +27,20 @@ public class L2HelperBuff
      *  If False only Fighter class will obtain this Buff */
     private boolean _isMagicClass;
 
+    public L2HelperBuff(final XmlEntry entry) {
+    	this((XmlHelperBuff) entry);
+    }
     
     /**
      * Constructor of L2HelperBuff.<BR><BR>
      */
-    public L2HelperBuff(StatsSet set)
-    {
-        
-        _lowerLevel          = set.getInteger("lowerLevel");
-        _upperLevel          = set.getInteger("upperLevel");
-        _skillID             = set.getInteger("skillID");
-        _skillLevel          = set.getInteger("skillLevel");
-        
-        if("false".equals(set.getString("isMagicClass")))
-            _isMagicClass = false;
-        else
-            _isMagicClass = true;
-        
+    public L2HelperBuff(final XmlHelperBuff buff) {
+    	_lowerLevel = buff.lowerLevel;
+    	_upperLevel = buff.upperLevel;
+    	_skillID = buff.skillId;
+    	_skillLevel = buff.skillLevel;
+    	_isMagicClass = buff.isMagicClass;
     }
-    
 
     /**
      * Returns the lower level that the L2PcInstance must achieve in order to obtain this buff

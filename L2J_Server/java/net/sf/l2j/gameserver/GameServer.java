@@ -270,13 +270,7 @@ public class GameServer
 		HennaTreeTable.getInstance();
         
         _helperBuffTable = HelperBuffTable.getInstance();
-        
-        if (!_helperBuffTable.isInitialized())
-        {
-           throw new Exception("Could not initialize the Helper Buff Table");
-        }
-        
-
+   
         Territory.getInstance();
 		TeleportLocationTable.getInstance();
 		L2World.getInstance();
