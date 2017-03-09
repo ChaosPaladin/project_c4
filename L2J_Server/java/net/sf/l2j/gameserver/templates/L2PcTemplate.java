@@ -1,36 +1,14 @@
-/*
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- * 02111-1307, USA.
- *
- * http://www.gnu.org/copyleft/gpl.html
- */
 package net.sf.l2j.gameserver.templates;
 
+import java.util.LinkedList;
 import java.util.List;
 
-import javolution.util.FastList;
+import la2.world.model.Utils;
+import la2.world.model.data.xml.XmlPcStats;
 import net.sf.l2j.gameserver.ItemTable;
 import net.sf.l2j.gameserver.model.base.ClassId;
 import net.sf.l2j.gameserver.model.base.Race;
 
-/**
- * @author mkizub
- *
- * TODO To change the template for this generated type comment go to
- * Window - Preferences - Java - Code Style - Code Templates
- */
 public class L2PcTemplate extends L2CharTemplate {
 	
 	/** The Class object of the L2PcInstance */
@@ -54,11 +32,38 @@ public class L2PcTemplate extends L2CharTemplate {
 	public final float   lvlMpAdd;
 	public final float   lvlMpMod;
 	
-	private List<L2Item> _items = new FastList<L2Item>();
+	private List<L2Item> _items = new LinkedList<L2Item>();
 	
+	public L2PcTemplate(XmlPcStats stats, boolean male) {
+		super(stats);
+		classId = Utils.map(stats.pClass);
+		race = Race.values()[stats.race];
+		className = stats.className;
+		baseLoad = stats.load;
+		spawnX = stats.x;
+		spawnY = stats.y;
+		spawnZ = stats.z;
+		lvlHpAdd = stats.defaulthpadd;
+		lvlHpMod = stats.defaulthpmod;
+		lvlMpAdd = stats.defaultmpadd;
+		lvlMpMod = stats.defaultmpmod;
+		lvlCpAdd = stats.defaultcpadd;
+		lvlCpMod = stats.defaultcpmod;
+		classBaseLevel = stats.level;
+		if(male) {
+			collisionHeight = stats.mColHeight;
+			collisionRadius = stats.mColRadius;
+		} else {
+			collisionHeight = stats.fColHeight;
+			collisionRadius = stats.fColRadius;
+		}
+		isMale = male;
+		for(int item : stats.items)
+			if(item > 0)
+				addItem(item);
+	}
 	
-	public L2PcTemplate(StatsSet set)
-	{
+	public L2PcTemplate(StatsSet set) {
 		super(set);
 		classId   = ClassId.values()[set.getInteger("classId")];
 		race      = Race.values()[set.getInteger("raceId")];
@@ -84,8 +89,7 @@ public class L2PcTemplate extends L2CharTemplate {
 	 * add starter equipment
 	 * @param i
 	 */
-	public void addItem(int itemId)
-	{
+	public void addItem(int itemId) {
 		L2Item item = ItemTable.getInstance().getTemplate(itemId);
 		if (item != null)
 			_items.add(item);

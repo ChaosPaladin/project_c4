@@ -256,7 +256,6 @@ $MYG < ../sql/castle.sql &> /dev/null
 $MYG < ../sql/castle_door.sql &> /dev/null
 $MYG < ../sql/castle_doorupgrade.sql &> /dev/null
 $MYG < ../sql/castle_siege_guards.sql &> /dev/null
-$MYG < ../sql/char_templates.sql &> /dev/null
 $MYG < ../sql/character_friends.sql &> /dev/null
 $MYG < ../sql/character_hennas.sql &> /dev/null
 $MYG < ../sql/character_macroses.sql &> /dev/null
@@ -279,8 +278,6 @@ $MYG < ../sql/global_tasks.sql &> /dev/null
 $MYG < ../sql/helper_buff_list.sql &> /dev/null
 $MYG < ../sql/heroes.sql &> /dev/null
 $MYG < ../sql/items.sql &> /dev/null
-$MYG < ../sql/locations.sql &> /dev/null
-$MYG < ../sql/lvlupgain.sql &> /dev/null
 $MYG < ../sql/olympiad_nobles.sql&> /dev/null
 $MYG < ../sql/pets.sql &> /dev/null
 $MYG < ../sql/posts.sql &> /dev/null

@@ -43,7 +43,7 @@ public class NpcInfo extends ServerBasePacket
 	private int _mAtkSpd, _pAtkSpd;
 	private int _runSpd, _walkSpd, _swimRunSpd, _swimWalkSpd, _flRunSpd, _flWalkSpd, _flyRunSpd, _flyWalkSpd;
 	private int _rhand, _lhand;
-    private int collisionHeight, collisionRadius;
+    private double collisionHeight, collisionRadius;
     private String _name = "";
     private String _title = "";
 

@@ -46,8 +46,8 @@ public class NpcInfoPoly extends ServerBasePacket
 	private String _name, _title;
 	private short _abnormalEffect;
 	L2NpcTemplate _template;
-    private int collisionRadius;
-    private int collisionHeight;
+    private double collisionRadius;
+    private double collisionHeight;
 
 	/**
 	 * @param _characters

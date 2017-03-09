@@ -151,51 +151,6 @@ public final class L2NpcTemplate extends L2CharTemplate
 		_teachInfo = null;
 		jClass = entry.javaClass;
 	}
-	
-	/**
-	 * Constructor of L2Character.<BR><BR>
-	 * 
-	 * @param set The StatsSet object to transfert data to the method
-	 * 
-	 */
-	@Deprecated
-	public L2NpcTemplate(StatsSet set)
-	{
-		super(set);
-		npcId     = set.getInteger("npcId");
-        idTemplate = set.getInteger("idTemplate");
-		type      = set.getString("type");
-		name      = set.getString("name");
-        serverSideName = set.getBool("serverSideName");
-        title     = set.getString("title");
-        serverSideTitle = set.getBool("serverSideTitle");
-		sex       = set.getString("sex");
-		level     = set.getInteger("level");
-		revardExp = set.getInteger("revardExp");
-		revardSp  = set.getInteger("revardSp");
-		aggroRange= set.getInteger("aggroRange");
-		rhand     = set.getInteger("rhand");
-		lhand     = set.getInteger("lhand");
-		armor     = set.getInteger("armor");
-		String f  = set.getString("factionId", null);
-		if (f == null)
-			factionId = null;
-		else
-			factionId = f.intern();
-		factionRange  = set.getInteger("factionRange");
-		isUndead      = (set.getInteger("isUndead", 0) == 1);
-        absorb_level  = set.getInteger("absorb_level", 0);
-		//String r = set.getString("race", null);
-		//if (r == null)
-		//	race = null;
-		//else
-		//	race = r.intern();
-		race = 0;
-		rateHp = 1;
-		npcStatsSet = set;
-		_teachInfo = null;
-		jClass = null;
-	}
     
     public void addTeachInfo(ClassId classId)
 	{

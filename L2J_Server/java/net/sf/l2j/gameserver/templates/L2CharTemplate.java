@@ -19,6 +19,7 @@
 package net.sf.l2j.gameserver.templates;
 
 import la2.world.model.data.xml.XmlNpc;
+import la2.world.model.data.xml.XmlPcStats;
 
 /**
  * This class ...
@@ -95,9 +96,76 @@ public class L2CharTemplate
     public final int baseMpConsumeRate;
     public final int baseHpConsumeRate;
 	
-	public final int collisionRadius;   
-	public final int collisionHeight;
+    public double collisionRadius;   
+    public double collisionHeight;
 	
+	
+    public L2CharTemplate(XmlPcStats stats) {
+		baseSTR            = stats.STR;
+		baseCON            = stats.CON;
+		baseDEX            = stats.DEX;
+		baseINT            = stats.INT;
+		baseWIT            = stats.WIT;
+		baseMEN            = stats.MEN;
+		baseHpMax          = (int) stats.defaulthpbase; 
+    	baseCpMax          = (int) stats.defaultcpbase;
+		baseMpMax          = (int) stats.defaultcpmod;
+		baseHpReg          = 1.5f;
+        baseCpReg          = 0.01f;
+		baseMpReg          = 0.9f;
+		basePAtk           = stats.pAtk;
+		baseMAtk           = stats.mAtk;
+		basePDef           = stats.pDef;
+		baseMDef           = stats.mDef;
+		basePAtkSpd        = stats.pSpd;
+		baseMAtkSpd        = stats.mSpd;
+		baseMReuseRate     = 1f;
+		baseShldDef        = 0;
+		baseAtkRange       = 40;
+		baseShldRate       = 0;
+		baseCritRate       = stats.critical/10;
+		baseAttackCancel   = 50; // 50% to break ATTACK
+		baseRunSpd         = stats.moveSpeed;
+		// SpecialStats
+		baseBreath         = 100;
+		baseAggression     = 0;
+		baseBleed          = 0;
+		basePoison         = 0;
+		baseStun           = 0;
+		baseRoot           = 0;
+		baseMovement       = 0;
+		baseConfusion      = 0;
+		baseSleep          = 0;
+		baseFire           = 0;
+		baseWind           = 0;
+		baseWater          = 0;
+		baseEarth          = 0;
+		baseHoly           = 0;
+		baseDark           = 0;
+		baseAggressionRes  = 0;
+		baseBleedRes       = 0;
+		basePoisonRes      = 0;
+		baseStunRes        = 0;
+		baseRootRes        = 0;
+		baseMovementRes    = 0;
+		baseConfusionRes   = 0;
+		baseSleepRes       = 0;
+		baseFireRes        = 0;
+		baseWindRes        = 0;
+		baseWaterRes       = 0;
+		baseEarthRes       = 0;
+		baseHolyRes        = 0;
+		baseDarkRes        = 0;
+        
+        //C4 Stats
+        baseMpConsumeRate      = 0;
+        baseHpConsumeRate      = 0;
+		
+		// Geometry
+		collisionRadius    = 0;
+		collisionHeight    = 0;
+    }
+    
 	public L2CharTemplate(StatsSet set)
 	{
 		// Base stats
