@@ -8,10 +8,10 @@
 
 package net.sf.l2j.gameserver.model;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import javolution.util.FastList;
 import net.sf.l2j.gameserver.lib.Rnd;
 
 public class L2Territory
@@ -36,7 +36,7 @@ public class L2Territory
 
 	public L2Territory(int terr)
 	{
-		_points = new FastList<Point>();
+		_points = new LinkedList<Point>();
 		_terr = terr;
 		_x_min = 999999;
 		_x_max =-999999;

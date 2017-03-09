@@ -277,6 +277,7 @@ public class GameServer
         }
         
 
+        Territory.getInstance();
 		TeleportLocationTable.getInstance();
 		L2World.getInstance();
         SpawnTable.getInstance();

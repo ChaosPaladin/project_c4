@@ -1,6 +1,7 @@
 package net.sf.l2j.gameserver;
 
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.logging.Logger;
 
 import la2.world.model.data.xml.XmlLoader;
@@ -17,6 +18,7 @@ public class Territory {
 	}
 	
 	private Territory()	{
+		_territory = new TreeMap<>();
 		int count[] = {0};
 		XmlLoader.load("territory.xml").list.stream().map(XmlTerritory.class::cast).forEach(entry -> {
 			final L2Territory t = new L2Territory(entry.id);
