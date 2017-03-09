@@ -286,9 +286,9 @@ public class SQLAccountManager
 				statement.executeUpdate();
 
 				// merchant_lease 
-				statement = con.prepareStatement("DELETE FROM merchant_lease WHERE player_id=?;");
-				statement.setString(1, rset.getString("obj_Id"));
-				statement.executeUpdate();
+				//statement = con.prepareStatement("DELETE FROM merchant_lease WHERE player_id=?;");
+				//statement.setString(1, rset.getString("obj_Id"));
+				//statement.executeUpdate();
 				
 				// boxaccess
 				statement = con.prepareStatement("DELETE FROM boxaccess WHERE charname=?;");
