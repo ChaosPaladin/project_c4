@@ -9,6 +9,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "data")
 public class XmlData {
 	@XmlElements({
+		@XmlElement(name = "armor", type = XmlArmor.class),
+		@XmlElement(name = "weapon", type = XmlWeapon.class),
+		@XmlElement(name = "etcitem", type = XmlEtcItem.class),
 		@XmlElement(name = "fish", type = XmlFish.class),
 		@XmlElement(name = "fish-reward", type = XmlFishReward.class),
 		@XmlElement(name = "helper-buff", type = XmlHelperBuff.class),

@@ -244,7 +244,6 @@ else
 echo "Upgrading gameserver content"
 fi
 $MYG < ../sql/account_data.sql &> /dev/null
-$MYG < ../sql/armor.sql &> /dev/null
 $MYG < ../sql/auction.sql &> /dev/null
 $MYG < ../sql/auction_bid.sql &> /dev/null
 $MYG < ../sql/auction_watch.sql &> /dev/null
@@ -269,7 +268,6 @@ $MYG < ../sql/characters.sql &> /dev/null
 $MYG < ../sql/clan_data.sql &> /dev/null
 $MYG < ../sql/clan_wars.sql &> /dev/null
 $MYG < ../sql/clanhall.sql &> /dev/null
-$MYG < ../sql/etcitem.sql &> /dev/null
 $MYG < ../sql/forums.sql &> /dev/null
 $MYG < ../sql/games.sql &> /dev/null
 $MYG < ../sql/global_tasks.sql &> /dev/null
@@ -285,7 +283,6 @@ $MYG < ../sql/seven_signs_status.sql &> /dev/null
 $MYG < ../sql/siege_clans.sql &> /dev/null
 $MYG < ../sql/spawnlist.sql &> /dev/null
 $MYG < ../sql/topic.sql &> /dev/null
-$MYG < ../sql/weapon.sql &> /dev/null
 }
 
 experimental(){

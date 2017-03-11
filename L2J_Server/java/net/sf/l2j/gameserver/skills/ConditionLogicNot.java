@@ -25,11 +25,11 @@ package net.sf.l2j.gameserver.skills;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-class ConditionLogicNot extends Condition {
+public class ConditionLogicNot extends Condition {
 
 	Condition _condition;
 	
-	ConditionLogicNot(Condition condition)
+	public ConditionLogicNot(Condition condition)
 	{
 		_condition = condition;
 		if (getListener() != null)

@@ -18,13 +18,24 @@
  */
 package net.sf.l2j.gameserver.templates;
 
+import la2.world.model.data.xml.XmlEntry;
+import la2.world.model.data.xml.XmlEtcItem;
+
 /**
  * This class is dedicated to the management of EtcItem.
  * 
  * @version $Revision: 1.2.2.1.2.3 $ $Date: 2005/03/27 15:30:10 $
  */
-public final class L2EtcItem  extends L2Item
-{
+public final class L2EtcItem  extends L2Item {
+	
+	public L2EtcItem(XmlEntry entry) {
+		this((XmlEtcItem) entry);
+	}
+	
+	public L2EtcItem(XmlEtcItem entry) {
+		super(entry);
+	}
+	
 	/**
 	 * Constructor for EtcItem.
 	 * @see L2Item constructor

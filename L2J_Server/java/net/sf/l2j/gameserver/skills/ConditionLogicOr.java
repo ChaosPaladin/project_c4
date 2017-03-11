@@ -26,12 +26,12 @@ package net.sf.l2j.gameserver.skills;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-class ConditionLogicOr extends Condition {
+public class ConditionLogicOr extends Condition {
 
 	private static Condition[] emptyConditions = new Condition[0]; 
 	Condition[] _conditions = emptyConditions;
 	
-	void add(Condition condition)
+	public void add(Condition condition)
 	{
 		if (condition == null)
 			return;

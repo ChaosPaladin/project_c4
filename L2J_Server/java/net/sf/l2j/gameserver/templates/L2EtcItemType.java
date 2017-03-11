@@ -36,7 +36,7 @@ public enum L2EtcItemType {
     SEED       (10, "Seed"),
     SHOT       (11, "Shot");
 	
-	final int _id;
+	public final int _id;
 	final String _name;
 	
 	/**

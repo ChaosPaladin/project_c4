@@ -1,44 +1,35 @@
-/*
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- * 02111-1307, USA.
- *
- * http://www.gnu.org/copyleft/gpl.html
- */
 package net.sf.l2j.gameserver.templates;
 
 import java.util.List;
 
 import javolution.util.FastList;
+import la2.world.model.data.xml.XmlArmor;
+import la2.world.model.data.xml.XmlEntry;
 import net.sf.l2j.gameserver.model.L2Character;
 import net.sf.l2j.gameserver.model.L2ItemInstance;
 import net.sf.l2j.gameserver.skills.Env;
 import net.sf.l2j.gameserver.skills.Func;
 import net.sf.l2j.gameserver.skills.FuncTemplate;
+import net.sf.l2j.gameserver.templates.L2ArmorType;
 
-/**
- * This class is dedicated to the management of armors.
- * 
- * @version $Revision: 1.2.2.1.2.6 $ $Date: 2005/03/27 15:30:10 $
- */
-public final class L2Armor extends L2Item
-{
-	private final int _avoidModifier;
-	private final int _pDef;
-	private final int _mDef;
-	private final int _mpBonus;
-	private final int _hpBonus;
+public final class L2Armor extends L2Item {
+	private final int avoidModifier;
+	private final int pDef;
+	private final int mDef;
+	private final int mpBonus;
+	//private final int _hpBonus;
+	
+	public L2Armor(final XmlEntry entry) {
+		this((XmlArmor) entry);
+	}
+	
+	public L2Armor(final XmlArmor data) {
+		super(data);
+		avoidModifier = data.avoidModify;
+		pDef = data.mDef;
+		mDef = data.pDef;
+		mpBonus = data.mpBonus;
+	}
 	
     /**
      * Constructor for Armor.<BR><BR>
@@ -53,11 +44,11 @@ public final class L2Armor extends L2Item
 	public L2Armor(L2ArmorType type, StatsSet set)
 	{
 		super(type, set);
-		_avoidModifier = set.getInteger("avoid_modify");
-		_pDef          = set.getInteger("p_def");
-		_mDef          = set.getInteger("m_def");
-		_mpBonus       = set.getInteger("mp_bonus", 0);
-		_hpBonus       = set.getInteger("hp_bonus", 0);
+		avoidModifier = set.getInteger("avoid_modify");
+		pDef          = set.getInteger("p_def");
+		mDef          = set.getInteger("m_def");
+		mpBonus       = set.getInteger("mp_bonus", 0);
+		//_hpBonus       = set.getInteger("hp_bonus", 0);
 	}
 	
 	/**
@@ -84,7 +75,7 @@ public final class L2Armor extends L2Item
 	 */
 	public final int getMDef()
 	{
-		return _mDef;
+		return mDef;
 	}
 	
 	/**
@@ -93,7 +84,7 @@ public final class L2Armor extends L2Item
 	 */
 	public final int getPDef()
 	{
-		return _pDef;
+		return pDef;
 	}
 	
 	/**
@@ -102,7 +93,7 @@ public final class L2Armor extends L2Item
 	 */
 	public final int getAvoidModifier()
 	{
-		return _avoidModifier;
+		return avoidModifier;
 	}
 	
 	/**
@@ -111,17 +102,17 @@ public final class L2Armor extends L2Item
 	 */
 	public final int getMpBonus()
 	{
-		return _mpBonus;
+		return mpBonus;
 	}
 	
 	/**
 	 * Returns physical bonus given by the armor
 	 * @return int : value of the physical bonus
 	 */
-	public final int getHpBonus()
-	{
-		return _hpBonus;
-	}
+	//public final int getHpBonus()
+	//{
+	//	return _hpBonus;
+	//}
 
 	/**
 	 * Returns array of Func objects containing the list of functions used by the armor 

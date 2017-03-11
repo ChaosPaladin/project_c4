@@ -1,23 +1,28 @@
 package net.sf.l2j.gameserver.model;
 
-public class FishData
-{
-		private final int _id;
-		private final int _level;
-		private final String _name;
-		private final int _HP;
-		private final int _HpRegen;
-		private final int _type;
+import la2.world.model.data.xml.XmlEntry;
+import la2.world.model.data.xml.XmlFish;
 
-		public FishData(int id, int lvl, String name, int HP, int HpRegen, int type)
-		{
-			_id = id;
-			_level = lvl;
-			_name = name.intern();
-			_HP = HP;
-			_HpRegen = HpRegen;
-			_type = type;
-		}
+public class FishData {
+	private final int _id;
+	private final int _level;
+	private final String _name;
+	private final int _HP;
+	private final int _HpRegen;
+	private final int _type;
+	
+	public FishData(XmlEntry entry) {
+		this((XmlFish) entry);
+	}
+		
+	public FishData(XmlFish entry) {
+		_id = entry.id;
+		_level = entry.level;
+		_name = entry.name;
+		_HP = entry.hp;
+		_HpRegen = entry.hpregen;
+		_type = entry.type;
+	}
 
 		/**
 		 * @return Returns the id.

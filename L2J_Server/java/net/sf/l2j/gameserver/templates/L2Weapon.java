@@ -21,6 +21,9 @@ package net.sf.l2j.gameserver.templates;
 import java.util.List;
 
 import javolution.util.FastList;
+import la2.world.model.data.xml.XmlEntry;
+import la2.world.model.data.xml.XmlWeapon;
+import la2.world.model.item.WeaponType;
 import net.sf.l2j.gameserver.model.L2Character;
 import net.sf.l2j.gameserver.model.L2Effect;
 import net.sf.l2j.gameserver.model.L2ItemInstance;
@@ -55,6 +58,27 @@ public final class L2Weapon  extends L2Item
     protected L2Skill[] _skillsOnCast;
     protected L2Skill[] _skillsOnCrit;
     
+    
+    public L2Weapon(XmlEntry entry) {
+    	this((XmlWeapon) entry);
+    }
+    
+    public L2Weapon(XmlWeapon entry) {
+    	super(entry);
+		_soulShotCount   = entry.soulshots;
+		_spiritShotCount = entry.spiritshots;
+		_pDam            = entry.pDam;
+		_rndDam          = entry.rndDam;
+		_critical        = entry.critical;
+		_hitModifier     = entry.hitModify;
+		_avoidModifier   = entry.avoidModify;
+		_shieldDef       = entry.shieldDef;
+		_shieldDefRate   = entry.shieldDefRate;
+		_atkSpeed        = entry.atkSpeed;
+		_atkReuse        = entry.weaponType == WeaponType.bow ? 1500 : 0;
+		_mpConsume       = entry.mpConsume;
+		_mDam			 = entry.mDam;
+    }
     /**
      * Constructor for Weapon.<BR><BR>
      * <U><I>Variables filled :</I></U><BR>

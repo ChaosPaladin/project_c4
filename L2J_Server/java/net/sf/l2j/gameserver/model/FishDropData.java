@@ -1,27 +1,32 @@
 package net.sf.l2j.gameserver.model;
 
+import la2.world.model.data.xml.XmlEntry;
+import la2.world.model.data.xml.XmlFishReward;
+
 /**
 /*
  * Author: -Nemesiss-
  *
  */
-public class FishDropData
-{
+public class FishDropData {
 	private final int _fishId;
 	private final int _rewarditemId;
 	private final int _drop;
 	private final int _minchance;
 	private final int _maxchance;
 
-	public FishDropData(int fishid, int itemid, int drop, int minchance, int maxchance)
-	{
-		_fishId = fishid;
-		_rewarditemId = itemid;
-		_drop = drop;
-		_minchance = minchance;
-		_maxchance = maxchance;
-
+	public FishDropData(XmlEntry entry) {
+		this((XmlFishReward) entry);
 	}
+	
+	public FishDropData(XmlFishReward entry) {
+		_fishId = entry.fishid;
+		_rewarditemId = entry.rewardid;
+		_drop = entry.count;
+		_minchance = entry.minchance;
+		_maxchance = entry.maxchance;
+	}
+
 	public int getFishId()
 	{
 		return _fishId;

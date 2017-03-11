@@ -37,7 +37,7 @@ public enum L2WeaponType {
     PET       (12, "Pet"),
 	ROD       (13, "Rod");
 	
-	private final int _id;
+	public final int _id;
 	private final String _name;
 	
 	/**

@@ -238,11 +238,6 @@ public class GameServer
 		CharNameTable.getInstance();
         
 		_itemTable = ItemTable.getInstance();
-		if (!_itemTable.isInitialized())
-		{
-		    _log.severe("Could not find the extraced files. Please Check Your Data.");
-		    throw new Exception("Could not initialize the item table");
-		}
 
 		TradeController.getInstance();
 		_skillTable = SkillTable.getInstance();
