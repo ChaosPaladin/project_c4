@@ -28,6 +28,7 @@
  */
 package net.sf.l2j.gameserver.serverpackets;
 
+import la2.world.model.item.MultiSell;
 import net.sf.l2j.gameserver.ItemTable;
 import net.sf.l2j.gameserver.model.L2ItemInstance;
 import net.sf.l2j.gameserver.model.L2Multisell;
@@ -56,6 +57,7 @@ public class MultiSellList extends ServerBasePacket
         _listId = listId;
         _inventoryOnly = false;
         _player = null;
+        list = null;
     }   
 
     public MultiSellList(int listId, boolean inventoryOnly, L2PcInstance player)
@@ -63,10 +65,29 @@ public class MultiSellList extends ServerBasePacket
         _listId = listId;
         _inventoryOnly = inventoryOnly;
         _player = player;
+        list = null;
     }   
+    
+    private final MultiSell list;
+    
+    private int offset;
+    
+    private int size;
+    
+    private boolean eop;//end of page
+    
+    public MultiSellList(final MultiSell multisell, int offset, int size, boolean eop) {
+    	list = multisell;
+    	this.offset = offset;
+    	this.size = size;
+    	this.eop = eop;
+    	System.out.println(eop);
+    }
 
     void runImpl()
     {
+    	if(list != null)
+    		return;
         if (_inventoryOnly && _player != null)
         {
             MultiSellListContainer tmpList = L2Multisell.getInstance().getList(_listId);
@@ -105,6 +126,35 @@ public class MultiSellList extends ServerBasePacket
 
     void writeImpl()
     {
+    	if(list != null) {
+    		writeC(0xd0);
+    		writeD(list.id);
+    		writeD(offset + 1);
+    		writeD(eop?1:0);
+    		writeD(0x1c);
+    		writeD(list.list.length);	
+    		for(int i = offset*0x1c ; i < offset*0x1c + size ; i++) {
+    			writeD(i + 1);
+    			writeC(1);
+    			writeH(list.list[i].production.length);
+    			writeH(list.list[i].goods.length);
+    			for(MultiSell.Barter.Item item : list.list[i].production) {
+    				writeH(item.item.getItemId());
+    				writeD(0);
+    				writeH(item.item.getType2());
+    				writeD(item.count);
+    				writeH(0);
+    			}
+    			
+    			for(MultiSell.Barter.Item item : list.list[i].goods) {
+    				writeH(item.item.getItemId());
+    				writeH(item.item.getType2());
+    				writeD(item.count);
+    				writeH(0);
+    			}
+    		}
+    		return;
+    	}
     	// [ddddd] [dchh] [hdhdh] [hhdh]
     	
         writeC(0xd0);

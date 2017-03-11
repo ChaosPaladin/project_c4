@@ -21,7 +21,7 @@ package net.sf.l2j.gameserver.model.actor.instance;
 import java.util.StringTokenizer;
 
 import javolution.lang.TextBuilder;
-
+import la2.world.model.data.MultiSellData;
 import net.sf.l2j.Config;
 import net.sf.l2j.gameserver.ClientThread;
 import net.sf.l2j.gameserver.TradeController;
@@ -174,6 +174,15 @@ public class L2MerchantInstance extends L2FolkInstance
 
             int val = Integer.parseInt(st.nextToken());
             showWearWindow(player, val);
+        }
+        else if(actualCommand.equalsIgnoreCase("xxx")) {
+        	if(st.countTokens() < 1)
+        		return;
+        	final int id = Integer.parseInt(st.nextToken());
+        	MultiSellData.getInstance().get(id).show(player);
+        }
+        else if(actualCommand.equalsIgnoreCase("multisell_show")) {
+        	MultiSellData.getInstance().debugList(this, player);
         }
         else if (actualCommand.equalsIgnoreCase("Multisell"))
         {

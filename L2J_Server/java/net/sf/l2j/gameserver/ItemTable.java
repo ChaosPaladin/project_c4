@@ -1,6 +1,7 @@
 package net.sf.l2j.gameserver;
 
 import java.sql.PreparedStatement;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
@@ -9,6 +10,7 @@ import java.util.logging.Logger;
 import java.util.logging.LogRecord;
 
 import javolution.util.FastMap;
+import la2.world.model.data.xml.XmlItemName;
 import la2.world.model.data.xml.XmlLoader;
 import net.sf.l2j.Config;
 import net.sf.l2j.L2DatabaseFactory;
@@ -123,10 +125,17 @@ public class ItemTable
         _slots.put("strider",              L2Item.SLOT_STRIDER); // for strider
 	}
 
+
+	//#name table
+	private final HashMap<String, L2Item> names = new HashMap<>();
+	
+	public L2Item get(String name) {
+		return names.get(name);
+	}
+	//#name table
 	
 	private static ItemTable _instance;
-	
-	
+
     /**
      * Returns instance of ItemTable
      * @return ItemTable 
@@ -152,7 +161,10 @@ public class ItemTable
      * Constructor.
      */
 	public ItemTable() {
-    	XmlLoader.load("armor.xml").list.stream().
+		_armors.clear();
+		_etcItems.clear();
+		_weapons.clear();
+		XmlLoader.load("armor.xml").list.stream().
 			map(L2Armor::new).
 			forEach(item -> _armors.put(item.getItemId(), item));
 		XmlLoader.load("etcitem.xml").list.stream().
@@ -164,7 +176,18 @@ public class ItemTable
         _log.config("ItemTable: Loaded " + _armors.size() + " Armors.");
         _log.config("ItemTable: Loaded " + _etcItems.size() + " Items.");
         _log.config("ItemTable: Loaded " + _weapons.size() + " Weapons.");
-		buildFastLookupTable();
+        buildFastLookupTable();
+        names.clear();
+		XmlLoader.load("item-table.xml").list.stream().
+			map(XmlItemName.class::cast).
+			forEach(data -> {
+				final L2Item item = getTemplate(data.id);
+				if(item == null)
+					_log.warning("not linked name with L2Item " + data.id + " " + data.name);
+				else
+					names.put(data.name, item);
+			});
+		
 	}
 
     /**

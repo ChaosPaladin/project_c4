@@ -26,6 +26,7 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+import la2.world.model.data.MultiSellData;
 import net.sf.l2j.Config;
 import net.sf.l2j.L2DatabaseFactory;
 import net.sf.l2j.Server;
@@ -238,7 +239,7 @@ public class GameServer
 		CharNameTable.getInstance();
         
 		_itemTable = ItemTable.getInstance();
-
+		MultiSellData.getInstance();
 		TradeController.getInstance();
 		_skillTable = SkillTable.getInstance();
 		if (!_skillTable.isInitialized())
