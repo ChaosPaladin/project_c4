@@ -19,7 +19,7 @@ public class QuestManager
         {
     		System.out.println("Initializing QuestManager");
             _Instance = new QuestManager();
-            _Instance.load();
+            //_Instance.load();
         }
         return _Instance;
     }

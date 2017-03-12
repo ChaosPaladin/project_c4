@@ -28,8 +28,9 @@ public class L2BlacksmithInstance extends L2FolkInstance
 	{
 		if (command.startsWith("multisell"))
 		{
+			System.out.println("TODO L2BlacksmithInstance.onBypassFeedback rework");
 			String listId = command.substring(9).trim();
-			player.sendPacket(new MultiSellList(Integer.parseInt(listId)));
+			//player.sendPacket(new MultiSellList(Integer.parseInt(listId)));
 		}
 		
 		super.onBypassFeedback(player,command);

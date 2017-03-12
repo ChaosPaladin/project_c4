@@ -1,5 +1,7 @@
 package net.sf.l2j.gameserver.instancemanager;
 
+import net.sf.l2j.gameserver.model.quest.QuestLoader;
+
 public class Manager
 {
 	public static void loadAll()
@@ -13,6 +15,7 @@ public class Manager
 		//PartyCommandManager.getInstance();
 		PetitionManager.getInstance();
 		QuestManager.getInstance();
+		QuestLoader.getInstance();
 		SiegeManager.getInstance();
 		TownManager.getInstance();
 		ZoneManager.getInstance();

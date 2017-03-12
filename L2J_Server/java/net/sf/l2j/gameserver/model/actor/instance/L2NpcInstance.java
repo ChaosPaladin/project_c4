@@ -1021,10 +1021,11 @@ public class L2NpcInstance extends L2Character
     		{
             	try
             	{
-            		MultiSellList multisell=new MultiSellList(Integer.parseInt(command.substring(9).trim()));
-            		
-            		if(multisell!=null) 
-            			player.sendPacket(multisell);
+            		//MultiSellList multisell=new MultiSellList(Integer.parseInt(command.substring(9).trim()));
+
+                    System.out.println("TODO L2NpcInstance.onBypassFeedback rework");
+            		//if(multisell!=null) 
+            			//player.sendPacket(multisell);
             	} catch (NumberFormatException nfe) 
             	{
             		player.sendMessage("Wrong command parameters");
@@ -1032,7 +1033,8 @@ public class L2NpcInstance extends L2Character
     		}
             else if (command.startsWith("exc_multisell"))
             {
-                player.sendPacket(new MultiSellList(Integer.parseInt(command.substring(13).trim()), true, player));
+            	System.out.println("TODO L2NpcInstance.onBypassFeedback rework");
+               // player.sendPacket(new MultiSellList(Integer.parseInt(command.substring(13).trim()), true, player));
             }
             else if (command.startsWith("npcfind_byid"))
             {
